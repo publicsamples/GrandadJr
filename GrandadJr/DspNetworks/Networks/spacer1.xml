@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="spacer1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="spacer1" Bypassed="0" Name="spacer1"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="fix8_block249" FactoryPath="container.fix8_block" Bypassed="0"
+            Name="fix8_block249">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain"
+                ShowParameters="0">
+            <Nodes>
+              <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
+                <Properties>
+                  <Property ID="NumParameters" Value="2"/>
+                  <Property ID="Mode" Value="RMS"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain1" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+                <Nodes>
+                  <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                    <Nodes>
+                      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
+                    <Nodes>
+                      <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3"
+                            ShowParameters="1">
+                        <Nodes>
+                          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                            <ModulationTargets>
+                              <Connection NodeId="gain3" ParameterId="Gain"/>
+                            </ModulationTargets>
+                          </Node>
+                          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Spread"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="jpanner1" ParameterId="Pan"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                            <Nodes>
+                              <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                                    Name="clone_cable">
+                                <Properties>
+                                  <Property ID="Mode" Value="Random"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="delStage" ParameterId="time"/>
+                                  <Connection NodeId="delStage" ParameterId="div"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                             DefaultValue="1.0" Value="32.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="delStage" ParameterId="tempo"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Value="32.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="delStage" ParameterId="sync"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Value="32.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="delStage" ParameterId="feed"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Value="32.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
+                                Name="clone_cable">
+                            <Properties>
+                              <Property ID="Mode" Value="Fixed"/>
+                            </Properties>
+                            <ModulationTargets>
+                              <Connection NodeId="delStage" ParameterId="tanh"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         DefaultValue="1.0" Value="32.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone1" FactoryPath="container.clone" Bypassed="0" Name="clone1"
+                            ShowClones="0" ShowParameters="1">
+                        <Properties>
+                          <Property ID="IsVertical" Value="0"/>
+                        </Properties>
+                        <Nodes>
+                          <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage" FactoryPath="project.delStage" Bypassed="0" Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" DefaultValue="0.6772187352180481"
+                                             Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Automated="1"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" DefaultValue="1.0"
+                                             Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" DefaultValue="1.0" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage218" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner250" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain221" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage219" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner251" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain253" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage220" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner252" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain254" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage221" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner253" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain255" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage222" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner254" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain256" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage223" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner255" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain257" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage224" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner256" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain258" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage225" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner257" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain259" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage226" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner258" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain260" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage227" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner259" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain261" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage228" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner260" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain262" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage229" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner261" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain263" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage230" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner262" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain264" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage231" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner263" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain265" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage232" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner264" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain266" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage233" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner265" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain267" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage234" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner266" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain268" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage235" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner267" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain269" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage236" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner268" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain270" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage237" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner269" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain271" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage238" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner270" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain272" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage239" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner271" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain273" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage240" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner272" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain274" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage241" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner273" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain275" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage242" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner274" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain276" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage243" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner275" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain277" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage244" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner276" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain278" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage245" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner277" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain279" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage246" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner278" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain280" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage247" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner279" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain281" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
+                                Name="clone1_child" NodeColour="4287927444">
+                            <Nodes>
+                              <Node ID="delStage248" FactoryPath="project.delStage" Bypassed="0"
+                                    Name="delStage">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.6772187352180481"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="time" Value="25.90000038594007" DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                                             DefaultValue="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
+                                             DefaultValue="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
+                                             DefaultValue="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="jpanner280" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                                <Parameters>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain282" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" DefaultValue="1.0"
+                                     Value="32.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                     Value="2.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain1">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="deltime" MinValue="-1.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.1307499994039536">
+        <Connections>
+          <Connection NodeId="clone_cable4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" Value="0.1464062213897703"
+                 DefaultValue="0.0" TextToValueConverter="" ExternalModulation="Disabled">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="gain" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.5204374988079071">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Mix" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.444703125">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="fb" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable9" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable10" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="tempo" Value="0.4861562482118607"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

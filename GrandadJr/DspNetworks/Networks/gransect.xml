@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="gransect" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="gransect" Bypassed="0" Name="gransect"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="faust1" FactoryPath="core.faust" Bypassed="0" Name="faust1">
+        <Properties>
+          <Property ID="ClassId" Value="gr1"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="4.0" MaxValue="64.0" StepSize="1.0" ID="Interpolation length (samples)"
+                     Automated="1" DefaultValue="16.0"/>
+          <Parameter MinValue="0.001000000047497451" MaxValue="3.200000047683716"
+                     StepSize="9.999999974752427e-7" ID="Grain length (s)" Automated="1"
+                     DefaultValue="0.1000000014901161"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Buffer position" Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                     ID="Time transposition" Automated="1" DefaultValue="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Time async degree" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
+                     ID="Time async depth" Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="9.999999974752427e-7"
+                     ID="Pitch transposition" DefaultValue="1.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Pitch async degree" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="9.999999974752427e-7"
+                     ID="Pitch async depth" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Freeze buffer"
+                     Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Volume" Automated="1" DefaultValue="0.0"/>
+        </Parameters>
+        <SwitchTargets/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Int" MinValue="4.0" MaxValue="64.0" StepSize="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="9.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Interpolation length (samples)"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Grain" MinValue="0.001000000047497451" MaxValue="3.200000047683716"
+                 StepSize="9.999999974752427e-7" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.496244998797124">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Grain length (s)"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pos" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Buffer position"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="TimeTranspose" MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.999999957079126">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Time transposition"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="TimeDepth" MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Time async depth"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Freeze" MinValue="0.0" MaxValue="1.0" StepSize="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Freeze buffer"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Vol" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Volume"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pitch" MinValue="-1.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="-2.524757292121649e-9"
+                 TextToValueConverter="" Value="0.2646879968069697">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Pitch transposition"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

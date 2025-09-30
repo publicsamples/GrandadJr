@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="gransect2" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="gransect2" Bypassed="0" Name="gransect2"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+            Name="input_toggle">
+        <ModulationTargets>
+          <Connection NodeId="faust1" ParameterId="Buffer position"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
+            Name="input_toggle">
+        <ModulationTargets>
+          <Connection NodeId="faust1" ParameterId="Grain length (s)"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+            Name="input_toggle">
+        <ModulationTargets>
+          <Connection NodeId="faust1" ParameterId="Pitch transposition"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="faust1" FactoryPath="core.faust" Bypassed="0" Name="faust1">
+        <Properties>
+          <Property ID="ClassId" Value="gr1"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="4.0" MaxValue="64.0" StepSize="1.0" ID="Interpolation length (samples)"
+                     Automated="1" DefaultValue="16.0"/>
+          <Parameter MinValue="0.001000000047497451" MaxValue="3.200000047683716"
+                     StepSize="9.999999974752427e-7" ID="Grain length (s)" Automated="1"
+                     DefaultValue="0.1000000014901161"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Buffer position" Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                     ID="Time transposition" Automated="1" DefaultValue="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Time async degree" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
+                     ID="Time async depth" Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="-16.0" MaxValue="15.99999991920777" StepSize="9.999999974752427e-7"
+                     ID="Pitch transposition" DefaultValue="0.999999957079126" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Pitch async degree" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="9.999999974752427e-7"
+                     ID="Pitch async depth" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Freeze buffer"
+                     Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                     ID="Volume" Automated="1" DefaultValue="0.0"/>
+        </Parameters>
+        <SwitchTargets/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Int" MinValue="4.0" MaxValue="64.0" StepSize="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="9.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Interpolation length (samples)"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Grain" MinValue="0.001000000047497451" MaxValue="3.200000047683716"
+                 StepSize="9.999999974752427e-7" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.496244998797124">
+        <Connections>
+          <Connection NodeId="input_toggle2" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pos" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="TimeTranspose" MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.999999957079126">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Time transposition"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="TimeDepth" MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Time async depth"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Freeze" MinValue="0.0" MaxValue="1.0" StepSize="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Freeze buffer"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Vol" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="Volume"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pitch" MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                 ExternalModulation="Disabled" Value="0.999999957079126" DefaultValue="-4.039611667394638e-8">
+        <Connections>
+          <Connection NodeId="input_toggle1" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="pos2" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="posmode" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="grain2" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle2" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="grainmode" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle2" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-16.0" MaxValue="16.0" ID="pitch2" Value="0.0" TextToValueConverter=""
+                 ExternalModulation="Disabled">
+        <Connections>
+          <Connection NodeId="input_toggle1" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="pitchmode" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle1" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

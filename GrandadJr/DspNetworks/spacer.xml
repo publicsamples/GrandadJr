@@ -1,0 +1,1686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="spacer" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="spacer" Bypassed="0" Name="spacer"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
+        <Nodes>
+          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Spread"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="0.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="jpanner1" ParameterId="Pan"/>
+              <Connection NodeId="jdelay" ParameterId="DelayTime"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="allpass" ParameterId="Q"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                         DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="allpass" ParameterId="Frequency"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="clone1" FactoryPath="container.clone" Bypassed="0" Name="clone1"
+                ShowClones="0" ShowParameters="1">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" DefaultValue="1000.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"
+                                 DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704" DefaultValue="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay63" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass32" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner95" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain4" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay64" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass33" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner96" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay65" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass34" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner97" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain6" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay66" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass35" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner98" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain7" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay67" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass36" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner99" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay68" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass37" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner100" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain9" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay69" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass38" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner101" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain10" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay70" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass39" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner102" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain11" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay71" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass40" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner103" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain12" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay72" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass41" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner104" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain13" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay73" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass42" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner105" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain14" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay74" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass43" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner106" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain15" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay75" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass44" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner107" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain16" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay76" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass45" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner108" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain17" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay77" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass46" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner109" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain18" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay78" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass47" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner110" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain19" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay79" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass48" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner111" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain20" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay80" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass49" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner112" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain21" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay81" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass50" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner113" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain22" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay82" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass51" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner114" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain23" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay83" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass52" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner115" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain24" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay84" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass53" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner116" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain25" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay85" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass54" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner117" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain26" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay86" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass55" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner118" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain27" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay87" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass56" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner119" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain28" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay88" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass57" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner120" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain29" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay89" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass58" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner121" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain30" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay90" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass59" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner122" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain31" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay91" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass60" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner123" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain32" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay92" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass61" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner124" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain33" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="jdelay93" FactoryPath="jdsp.jdelay" Bypassed="0" Name="jdelay">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Value="7.755540190174601" DefaultValue="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="allpass62" FactoryPath="filters.allpass" Bypassed="0" Name="allpass">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="588.5197231869392"
+                                 DefaultValue="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="2.0503125"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.02987304376145704"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner125" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain34" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-17.9999987781048"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" DefaultValue="1.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                         Value="2.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Clones" MinValue="1.0" MaxValue="32.0" ExternalModulation="Disabled"
+                 DefaultValue="1.0" Value="32.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Harm" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.2778532608695652">
+        <Connections>
+          <Connection NodeId="clone_pack" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="delpan" MinValue="-1.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 TextToValueConverter="" DefaultValue="" Value="0.716825439453125">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="q" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

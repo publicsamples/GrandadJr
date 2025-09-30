@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="QuadGrain2" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="QuadGrain2" Bypassed="0" Name="QuadGrain2"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+        <Nodes>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                         DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+            ShowClones="0" ShowParameters="1">
+        <Properties>
+          <Property ID="IsVertical" Value="0"/>
+        </Properties>
+        <Nodes>
+          <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                NodeColour="4287927444">
+            <Nodes>
+              <Node ID="gransect" FactoryPath="project.gransect" Bypassed="0" Name="gransect">
+                <Parameters>
+                  <Parameter MinValue="4.0" MaxValue="64.0" StepSize="1.0" ID="Int" Value="9.0"/>
+                  <Parameter MinValue="0.001000000047497451" MaxValue="3.200000047683716"
+                             StepSize="9.999999974752427e-7" ID="Grain" Value="0.8226929979729221"
+                             DefaultValue="0.4962449967861176"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                             ID="Pos" Value="0.4495629988649625" DefaultValue="0.0"/>
+                  <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
+                             ID="TimeTranspose" Value="0.9999999403953552"/>
+                  <Parameter MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
+                             ID="TimeDepth" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Freeze" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                             ID="Vol" Value="0.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
+                             ID="Pitch" Value="-2.524757292121649e-9" DefaultValue="0.2646879851818085"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="1" StepSize="1.0" ID="NumClones" DefaultValue="1.0"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                     Value="2.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Clones" Value="32.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+          <Connection NodeId="clone_cable" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Pos" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_pack" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Grain" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Dense" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

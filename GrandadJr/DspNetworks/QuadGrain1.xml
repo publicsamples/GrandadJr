@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="QuadGrain1" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="QuadGrain1" Bypassed="0" Name="QuadGrain1"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+        <Nodes>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
+            <ModulationTargets>
+              <Connection NodeId="granulator" ParameterId="Position"/>
+            </ModulationTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                         DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="granulator" ParameterId="GrainSize"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="granulator" ParameterId="Density"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+            ShowClones="0" ShowParameters="1">
+        <Properties>
+          <Property ID="IsVertical" Value="0"/>
+        </Properties>
+        <Nodes>
+          <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                NodeColour="4287927444">
+            <Nodes>
+              <Node ID="granulator" FactoryPath="core.granulator" Bypassed="0" Name="granulator">
+                <ComplexData>
+                  <AudioFiles>
+                    <AudioFile Index="0" MinValue="0" MaxValue="0"/>
+                  </AudioFiles>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Position" Automated="1"/>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="Pitch" Value="1.0"/>
+                  <Parameter MinValue="20.0" MaxValue="800.0" ID="GrainSize" DefaultValue="80.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Density" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Spread" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Detune" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="faust" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                <Properties>
+                  <Property ID="ClassId" Value="shift"/>
+                  <Property ID="NumParameters" Value="0"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="-12.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                             ID="shift (semitones)" Value="0.0"/>
+                  <Parameter MinValue="50.0" MaxValue="10000.0" StepSize="1.0" ID="window (samples)"
+                             Value="1000.0"/>
+                  <Parameter MinValue="1.0" MaxValue="10000.0" StepSize="1.0" ID="xfade (samples)"
+                             Value="10.0"/>
+                </Parameters>
+                <SwitchTargets/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="1" StepSize="1.0" ID="NumClones" DefaultValue="1.0"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                     Value="2.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Clones" Value="32.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+          <Connection NodeId="clone_cable" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Pos" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_pack" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Grain" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Dense" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

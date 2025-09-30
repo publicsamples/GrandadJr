@@ -1,0 +1,2104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="spacer3" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="spacer3" Bypassed="0" Name="spacer3"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
+        <Nodes>
+          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Spread"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="0.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="jpanner1" ParameterId="Pan"/>
+              <Connection NodeId="jdelay_cubic" ParameterId="DelayTime"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
+            <Properties>
+              <Property ID="Mode" Value="Fixed"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="0.99" ID="Value" DefaultValue="0.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="one_pole" ParameterId="Frequency"/>
+              <Connection NodeId="faust" ParameterId="aN"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                         DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         DefaultValue="1.0" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+            <ModulationTargets>
+              <Connection NodeId="faust" ParameterId="del"/>
+            </ModulationTargets>
+          </Node>
+          <Node ID="clone1" FactoryPath="container.clone" Bypassed="0" Name="clone1"
+                ShowClones="0" ShowParameters="1">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Automated="1"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" DefaultValue="1000.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust63" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole1" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic63" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner64" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain66" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust64" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole2" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic64" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner65" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain67" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust65" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole3" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic65" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner66" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain68" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust66" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole4" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic66" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner67" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain69" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust67" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole5" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic67" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner68" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain70" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust68" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole6" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic68" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner69" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain71" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust69" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole7" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic69" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner70" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain72" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust70" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole8" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic70" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner71" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain73" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust71" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole9" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic71" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner72" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain74" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust72" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole10" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic72" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner73" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain75" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust73" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole11" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic73" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner74" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain76" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust74" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole12" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic74" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner75" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain77" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust75" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole13" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic75" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner76" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain78" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust76" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole14" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic76" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner77" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain79" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust77" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole15" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic77" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner78" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain80" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust78" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole16" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic78" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner79" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain81" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust79" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole17" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic79" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner80" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain82" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust80" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole18" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic80" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner81" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain83" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust81" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole19" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic81" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner82" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain84" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust82" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole20" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic82" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner83" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain85" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust83" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole21" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic83" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner84" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain86" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust84" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole22" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic84" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner85" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain87" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust85" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole23" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic85" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner86" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain88" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust86" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole24" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic86" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner87" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain89" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust87" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole25" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic87" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner88" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain90" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust88" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole26" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic88" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner89" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain91" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust89" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole27" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic89" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner90" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain92" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust90" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole28" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic90" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner91" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain93" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust91" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole29" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic91" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner92" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain94" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust92" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole30" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic92" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner93" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain95" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
+                    Name="clone1_child" NodeColour="4287927444">
+                <Nodes>
+                  <Node ID="faust93" FactoryPath="core.faust" Bypassed="0" Name="faust">
+                    <Properties>
+                      <Property ID="ClassId" Value="comb"/>
+                      <Property ID="NumParameters" Value="0"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                 ID="aN" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                 ID="del" Value="54.38999878428876" DefaultValue="0.0"/>
+                    </Parameters>
+                    <SwitchTargets/>
+                  </Node>
+                  <Node ID="one_pole31" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" TextToValueConverter="Frequency" Value="1000.0"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jdelay_cubic93" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                        Name="jdelay_cubic">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="Limit" Value="1000.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                 ID="DelayTime"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="jpanner94" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner1">
+                    <Parameters>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                      <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain96" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-12.59999869763853"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" DefaultValue="1.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                         Value="2.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Clones" MinValue="1.0" MaxValue="32.0" ExternalModulation="Disabled"
+                 DefaultValue="1.0" Value="23.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Harm" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.3810292119565217">
+        <Connections>
+          <Connection NodeId="clone_pack" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="delpan" MinValue="-1.0" MaxValue="1.0" ExternalModulation="Disabled"
+                 TextToValueConverter="" DefaultValue="" Value="-1.0">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="q" Value="0.876953125" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
