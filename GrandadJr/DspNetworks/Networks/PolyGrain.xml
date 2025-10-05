@@ -43,7 +43,7 @@
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="8.0" StepSize="1.0" ID="Tempo" Automated="1"/>
                               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
-                                         DefaultValue="1.0" Automated="1"/>
+                                         Value="1.0"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
                                          DefaultValue="0.0"/>
                               <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
@@ -114,13 +114,13 @@
               <Node ID="recorder1" FactoryPath="core.recorder" Bypassed="0" Name="recorder1">
                 <ComplexData>
                   <AudioFiles>
-                    <AudioFile Index="0" MinValue="0" MaxValue="88200"/>
+                    <AudioFile Index="0" MinValue="0" MaxValue="95222"/>
                   </AudioFiles>
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="State" Automated="1"/>
-                  <Parameter MinValue="800.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                             ID="RecordingLength" DefaultValue="800.0" Value="2000.0"/>
+                  <Parameter MinValue="800.0000119209288" MaxValue="3200.0" StepSize="0.1000000014901161"
+                             ID="RecordingLength" DefaultValue="800.0000119209288" Value="1983.800029560923"/>
                 </Parameters>
               </Node>
               <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear2">
@@ -408,7 +408,7 @@
                                           <Node ID="granulator" FactoryPath="core.granulator" Bypassed="0" Name="granulator">
                                             <ComplexData>
                                               <AudioFiles>
-                                                <AudioFile Index="0" MinValue="0" MaxValue="88200"/>
+                                                <AudioFile Index="0" MinValue="0" MaxValue="95222"/>
                                               </AudioFiles>
                                             </ComplexData>
                                             <Parameters>
@@ -501,22 +501,21 @@
     </Nodes>
     <Parameters>
       <Parameter MinValue="0.001000000047497451" MaxValue="3.200000047683716"
-                 ID="GrainLengthMS" Value="1.439999996414372" StepSize="9.999999974752427e-7"
+                 ID="GrainLengthMS" Value="2.439999993889614" StepSize="9.999999974752427e-7"
                  ExternalModulation="Disabled" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="gransect" ParameterId="Grain"/>
           <Connection NodeId="granulator" ParameterId="GrainSize"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="4.0" MaxValue="64.0" ID="IntLength" Value="64.0" DefaultValue="0.0"
+      <Parameter MinValue="4.0" MaxValue="64.0" ID="IntLength" Value="16.0" DefaultValue="0.0"
                  StepSize="1.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="gransect" ParameterId="Int"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="0.9999999974752427" ID="Position" Value="0.4599999988386116"
-                 StepSize="9.999999974752427e-7" TextToValueConverter="" ExternalModulation="Disabled"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="0.9999999974752427" ID="Position" Value="0.0"
+                 StepSize="9.999999974752427e-7" TextToValueConverter="" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
@@ -527,7 +526,7 @@
           <Connection NodeId="gransect" ParameterId="TimeTranspose"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pitch" Value="-0.5000000012623786"
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pitch" Value="0.02999999739949999"
                  StepSize="9.999999974752427e-7" ExternalModulation="Disabled"
                  TextToValueConverter="" DefaultValue="-2.524757292121649e-9">
         <Connections>
@@ -552,8 +551,8 @@
           <Connection NodeId="one_pole1" ParameterId="Frequency"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="1.0" TextToValueConverter=""
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="PosMod" Value="0.800000011920929"
+                 TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
@@ -564,7 +563,7 @@
           <Connection NodeId="clock_ramp" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="16.0" ID="PosDiv" Value="5.0" DefaultValue="0.0"
+      <Parameter MinValue="1.0" MaxValue="16.0" ID="PosDiv" Value="9.0" DefaultValue="0.0"
                  StepSize="1.0" TextToValueConverter="">
         <Connections>
           <Connection NodeId="clock_ramp" ParameterId="Multiplier"/>
@@ -580,23 +579,25 @@
           <Connection NodeId="add4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="RecTrigTempo" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="8.0" ID="RecTrigTempo" Value="2.0" StepSize="1.0"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clock_ramp1" ParameterId="Tempo"/>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="RecTridDiv" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="1.0" MaxValue="16.0" ID="RecTridDiv" Value="1.0" StepSize="1.0"
+                 TextToValueConverter="" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="clock_ramp1" ParameterId="Multiplier"/>
-          <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="gspred" Value="0.9929687500000002"
                  DefaultValue="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="gdense" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="gdense" Value="0.699999988079071"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="granulator" ParameterId="Density"/>
         </Connections>
@@ -614,8 +615,8 @@
                  DefaultValue="0.0" ExternalModulation="Disabled">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="MODE" Value="1.0" StepSize="1.0"
-                 TextToValueConverter="" ExternalModulation="Disabled">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="MODE" Value="0.0" StepSize="1.0"
+                 TextToValueConverter="" ExternalModulation="Disabled" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>

@@ -99,7 +99,7 @@
                                      SkewFactor="0.1976716816425323" ID="Decay" Value="10000.0" DefaultValue="300.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="1.0" DefaultValue="0.5"/>
                           <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.1976716816425323" ID="Release" Value="2983.700044460594"
+                                     SkewFactor="0.1976716816425323" ID="Release" Value="10000.0"
                                      DefaultValue="20.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.5"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
@@ -207,7 +207,7 @@
           <Connection NodeId="input_toggle" ParameterId="Input"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="256.0" StepSize="1.0" ID="Sh" Value="135.0"
+      <Parameter MinValue="1.0" MaxValue="256.0" StepSize="1.0" ID="Sh" Value="147.0"
                  TextToValueConverter="" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="sampleandhold" ParameterId="Counter"/>
@@ -220,7 +220,7 @@
       </Parameter>
       <Parameter ID="gain" MinValue="-100.0" MaxValue="24.0" StepSize="0.1000000014901161"
                  SkewFactor="5.422270774841309" ExternalModulation="Disabled"
-                 DefaultValue="" Value="1.490116119384766e-6">
+                 DefaultValue="" Value="8.800001621246324">
         <Connections>
           <Connection NodeId="gain1" ParameterId="Gain"/>
         </Connections>

@@ -1,9 +1,9 @@
-const var KnobLaf = Content.createLocalLookAndFeel();
+const var KnobLaf1 = Content.createLocalLookAndFeel();
 
 
 
 
-KnobLaf.registerFunction("drawRotarySlider", function(g, obj)
+KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
 {
 	var underDrag = Content.getComponentUnderDrag() == obj.id;
 	
@@ -17,7 +17,7 @@ KnobLaf.registerFunction("drawRotarySlider", function(g, obj)
 
 	g.setColour(0x00000000);
 
-	var radius = 35 - obj.clicked;
+	var radius = 50 - obj.clicked;
 
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 2));
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 3));
@@ -87,91 +87,7 @@ KnobLaf.registerFunction("drawRotarySlider", function(g, obj)
 });
 
 
-KnobLaf.registerFunction("drawTableRuler", function(g, obj)
-{
-    g.setColour(Colours.withAlpha(obj.textColour, 5));
-    
-    var x = obj.position * obj.area[2];
-    
-    g.drawLine(x, x, 0, obj.area[3], 0.0);
-    g.setColour(obj.bgColour);
-    g.drawLine(x, x, 0, obj.area[3], 1);
-});
-
-//const var UserShape1 = Content.getComponent("UserShape1").setLocalLookAndFeel(KnobLaf);     ;
 
 
 
-
-
-//const var ShpKnbs = [Content.getComponent("FileSmooth1")];
-
-
-
-const var OscKbs = [Content.getComponent("OscSemiTone1"),
-                    Content.getComponent("OscSemiTone2"),
-                    Content.getComponent("OscCent2"),
-                    Content.getComponent("OscCent1"),
-                    Content.getComponent("OscShape1"),
-                    Content.getComponent("OscShape2"),
-                    Content.getComponent("Osc1into2"),
-                    Content.getComponent("Osc2into1"),
-                    Content.getComponent("Divide1"),
-                    Content.getComponent("Divide")];
-
-for(s in OscKbs)
-     s.setLocalLookAndFeel(KnobLaf);     
-
-const var FileKnbs = [Content.getComponent("PosDiv"),
-                      Content.getComponent("PosMod"),
-                      Content.getComponent("FileInput"),
-                      Content.getComponent("FilePos1"),
-                      Content.getComponent("FileInput1"),
-                       Content.getComponent("FilePosi1"),
-                       Content.getComponent("PosMod1"),
-                        Content.getComponent("PosDiv1")];
-
-for(s in FileKnbs)
-     s.setLocalLookAndFeel(KnobLaf); 
-     
-     
-const var FilterKnbs = [Content.getComponent("Cut1"),
-                        Content.getComponent("Q1"),
-                        Content.getComponent("FilterGain1"),
-                        Content.getComponent("Pan1"),
-                        Content.getComponent("Cut2"),
-                        Content.getComponent("q2"),
-                        Content.getComponent("FilterGain2"),
-                        Content.getComponent("Pan")];
-
- for(s in FilterKnbs)
-      s.setLocalLookAndFeel(KnobLaf);
-
-const var EnvKnbs = [Content.getComponent("PosDiv9"),
-                     Content.getComponent("PosDiv8"),
-                     Content.getComponent("PosDiv6"),
-                     Content.getComponent("PosDiv7"),
-                     Content.getComponent("PosDiv3"),
-                     Content.getComponent("PosDiv2")];
-
-for(s in EnvKnbs)
-     s.setLocalLookAndFeel(KnobLaf);
-     
-     
-     const var LfoKnbs = [Content.getComponent("PosDiv4"),
-                          Content.getComponent("PosDiv5"),
-                          Content.getComponent("PosDiv10"),
-                          Content.getComponent("PosDiv11"),
-                          Content.getComponent("PosDiv12"),
-                          Content.getComponent("PosDiv13")];
-     
-for(s in LfoKnbs)
-     s.setLocalLookAndFeel(KnobLaf);    
-     
-const var MasterKnbs = [Content.getComponent("Vol1"),
-                        Content.getComponent("Vol")];
-for(s in MasterKnbs)
-     s.setLocalLookAndFeel(KnobLaf);                   
-
-      
-     
+  

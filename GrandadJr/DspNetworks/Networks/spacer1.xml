@@ -188,8 +188,9 @@
                                              Automated="1"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"
+                                             DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" DefaultValue="1.0" Automated="1"/>
@@ -230,8 +231,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -273,8 +274,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -316,8 +317,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -359,8 +360,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -402,8 +403,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -445,8 +446,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -488,8 +489,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -531,8 +532,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -574,8 +575,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -617,8 +618,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -660,8 +661,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -703,8 +704,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -746,8 +747,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -789,8 +790,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -832,8 +833,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -875,8 +876,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -918,8 +919,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -961,8 +962,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1004,8 +1005,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1047,8 +1048,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1090,8 +1091,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1133,8 +1134,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1176,8 +1177,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1219,8 +1220,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1262,8 +1263,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1305,8 +1306,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1348,8 +1349,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1391,8 +1392,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1434,8 +1435,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1477,8 +1478,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1520,8 +1521,8 @@
                                              DefaultValue="1.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="WinSync" Value="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                                             ID="WinTime" Value="0.0" DefaultValue="200.0"/>
-                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="1.0"/>
+                                             ID="WinTime" Value="1460.400021761656" DefaultValue="200.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="WinDiv" Value="16.0"/>
                                   <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="WinTempo" Value="18.0"
                                              DefaultValue="0.0"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.40166748046875"
@@ -1580,25 +1581,25 @@
     </Nodes>
     <Parameters>
       <Parameter ID="deltime" MinValue="-1.0" MaxValue="1.0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.1307499994039536">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" Value="0.1464062213897703"
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" Value="0.9900000095367432"
                  DefaultValue="0.0" TextToValueConverter="" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="clone_cable" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="gain" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.5204374988079071">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="clone_cable1" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="Mix" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.444703125">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>
@@ -1608,18 +1609,18 @@
           <Connection NodeId="clone_cable9" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="tanh" Value="0.5299999713897705"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable10" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="sync" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable3" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="tempo" Value="0.4861562482118607"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="tempo" Value="0.0">
         <Connections>
           <Connection NodeId="clone_cable2" ParameterId="Value"/>
         </Connections>
