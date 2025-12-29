@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Routing" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Routing" Bypassed="0" Name="Routing"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="frame1_block" FactoryPath="container.frame1_block" Bypassed="0"
+            Name="frame1_block">
+        <Nodes>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+            <Nodes>
+              <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289874089">
+                    <Properties>
+                      <Property ID="Connection" Value="FileShapeMix"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable1" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4286296647">
+                    <Properties>
+                      <Property ID="Connection" Value="FileShapeDrive"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod2" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable2" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289883208">
+                    <Properties>
+                      <Property ID="Connection" Value="FileShapeFeed"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod3" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable3" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289415090">
+                    <Properties>
+                      <Property ID="Connection" Value="FileShapeSmooth"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod4" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable4" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289873803">
+                    <Properties>
+                      <Property ID="Connection" Value="FilterMix"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod5" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable5" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289873797">
+                    <Properties>
+                      <Property ID="Connection" Value="FilterCut"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod6" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable6" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4289873842">
+                    <Properties>
+                      <Property ID="Connection" Value="FilterRes"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod7" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable7" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4284565426">
+                    <Properties>
+                      <Property ID="Connection" Value="DriveMix"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod8" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable8" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4286924722">
+                    <Properties>
+                      <Property ID="Connection" Value="DriveFeedMod"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod9" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable9" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable9" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4288431794">
+                    <Properties>
+                      <Property ID="Connection" Value="DriveMod"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod10" FactoryPath="core.global_mod" Bypassed="0"
+                        Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable10" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable10" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4282936754">
+                    <Properties>
+                      <Property ID="Connection" Value="ClipMix"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="global_mod11" FactoryPath="core.global_mod" Bypassed="0"
+                        Name="global_mod">
+                    <ModulationTargets>
+                      <Connection NodeId="global_cable11" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" DefaultValue="0.0"
+                                 Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable11" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4283648178">
+                    <Properties>
+                      <Property ID="Connection" Value="Clip"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="ShapeMix" MinValue="1.0" MaxValue="17.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="global_mod" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="ShpDrive" MinValue="1.0" MaxValue="17.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="global_mod1" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="ShapeFeed" MinValue="1.0" MaxValue="17.0" StepSize="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="global_mod2" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="ShapeSmooth" MinValue="1.0" MaxValue="17.0" StepSize="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="global_mod3" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="Filter" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod4" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="FiterCut" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod5" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="FilterRes"
+                 Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod6" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="DriveMix" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod7" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="DriveFeed"
+                 Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod8" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="DriveMod" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod9" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="ClipMix" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod10" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="Clip" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_mod11" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

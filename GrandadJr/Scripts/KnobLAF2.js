@@ -17,7 +17,7 @@ KnobLaf.registerFunction("drawRotarySlider", function(g, obj)
 
 	g.setColour(0x00000000);
 
-	var radius = 50 - obj.clicked;
+	var radius = 40 - obj.clicked;
 
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 2));
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 3));
@@ -98,34 +98,46 @@ KnobLaf.registerFunction("drawTableRuler", function(g, obj)
     g.drawLine(x, x, 0, obj.area[3], 1);
 });
 
+const var JrKnb = [Content.getComponent("MIX"),
+                    Content.getComponent("LOWPASS"),
+                    Content.getComponent("SpaceFeed1"),
+                    Content.getComponent("SpaceMix3"),
+                    Content.getComponent("SpaceSpread1"),
+                    Content.getComponent("SpaceMix2"),
+                    Content.getComponent("SpaceMix1"),
+                    Content.getComponent("GrainMix"),
+                    Content.getComponent("GrainSize1"),
+                    Content.getComponent("GrainSize"),
+                    Content.getComponent("Pitch1"),
+                    Content.getComponent("IntLength"),
+                    Content.getComponent("GrainLp"),
+                    Content.getComponent("GrainDiv"),
+                    Content.getComponent("GrainPos"),
+                    Content.getComponent("Harm2"),
+                    Content.getComponent("SpaceFeed2"),
+                    Content.getComponent("SpaceSpread2"),
+                    Content.getComponent("SpaceMix5"),
+                    Content.getComponent("OCT4"),
+                    Content.getComponent("OCT3"),
+                    Content.getComponent("OCT2"),
+                    Content.getComponent("WIN2"),
+                    Content.getComponent("SpaceMix4"),
+                    Content.getComponent("Div2"),
+                    Content.getComponent("Tempo2"),
+                    Content.getComponent("GrainPitch"),
+                    Content.getComponent("Div3"),
+                    Content.getComponent("Tempo3"),
+                    Content.getComponent("CutMix"),
+                    Content.getComponent("SvfCut"),
+                    Content.getComponent("SvfRes"),
+                    Content.getComponent("Div1"),
+                    Content.getComponent("Tempo1"),
+                    Content.getComponent("Div"),
+                    Content.getComponent("Tempo")];
 
-  const var JrKnb = [Content.getComponent("Spread1"),
-                     Content.getComponent("Harm1"),
-                     Content.getComponent("Pan1"),
-                     Content.getComponent("LOWPASS"),
-                     Content.getComponent("MIX"),
-                     Content.getComponent("WIN1"),
-                     Content.getComponent("WIN2"),
-                     Content.getComponent("Mix1"),
-                     Content.getComponent("GrainSize"),
-                     Content.getComponent("GranMix"),
-                     Content.getComponent("Dense"),
-                     Content.getComponent("Note"),
-                     Content.getComponent("Position"),
-                     Content.getComponent("PositionMod"),
-                     Content.getComponent("IntLength"),
-                     Content.getComponent("Pan2"),
-                     Content.getComponent("Harm2"),
-                     Content.getComponent("Spread2"),
-                     Content.getComponent("Mix2"),
-                     Content.getComponent("Pan"),
-                     Content.getComponent("VOICES2"),
-                     Content.getComponent("Pitch"),
-                     Content.getComponent("Time"),
-                     Content.getComponent("Div"),
-                     Content.getComponent("InputG1"),
-                     Content.getComponent("OCT2"),
-                     Content.getComponent("Tempo")];
+
+
+           
 
 for(s in JrKnb)
       s.setLocalLookAndFeel(KnobLaf);  

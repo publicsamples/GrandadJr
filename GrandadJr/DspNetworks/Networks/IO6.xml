@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="io6" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="io6" Bypassed="0" Name="io3"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+        <Nodes>
+          <Node ID="receive" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="global_send" FactoryPath="routing.global_send" Bypassed="0"
+                Name="global_send" NodeColour="4282927282">
+            <Properties>
+              <Property ID="Connection" Value="4"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="send" FactoryPath="routing.send" Bypassed="0" Name="send">
+            <Properties>
+              <Property ID="Connection" Value="receive"/>
+            </Properties>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="1" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="2" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="3" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="4" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="5" Value="1.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="6" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Feed" Value="0.0">
+        <Connections>
+          <Connection NodeId="receive" ParameterId="Feedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-100.0" MaxValue="-6.0" StepSize="0.1000000014901161"
+                 SkewFactor="5.422270774841309" ID="Thresh" Value="-100.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SendGain" Value="0.6664840393066406"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_send" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PitchShift"
+                 Value="3.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="-12.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                 ID="Pitch" Value="-12.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Window" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Xfade" Value="3.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Div" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

@@ -192,7 +192,7 @@ CGP(len, pos, pitch, x) =   loop ~
 //      GUI parameters
 // -----------------------------------------------------------------------------
 L = int(hslider("[00]Interpolation length (samples)", 16, 4, 64, 1));
-len = hslider("[01]Grain length (s)", .1, .001, 3.20, .000001) * ma.SR; 
+len = hslider("[01]Grain length (ms)", 100, 1, 6400, 0.001) * ma.SR / 1000;
 buff_pos = hslider("[02]Buffer position", 0, 0, 1, .000001) * size;
 t_fact = hslider("[03]Time transposition", 1, -16, 16, .000001) * 
     (ma.SR / size);

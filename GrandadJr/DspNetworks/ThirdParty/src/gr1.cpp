@@ -176,7 +176,7 @@ struct _gr1 final : public ::faust::dsp {
 	
 	void instanceConstants(int sample_rate) {
 		fSampleRate = sample_rate;
-		fConst0 = std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
+		fConst0 = 0.001f * std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
 		_gr1SIG0* sig0 = new_gr1SIG0();
 		sig0->instanceInit_gr1SIG0(sample_rate);
 		sig0->fill_gr1SIG0(1920000, ftbl0);
@@ -199,7 +199,7 @@ struct _gr1 final : public ::faust::dsp {
 	
 	void instanceResetUserInterface() {
 		fHslider0 = FAUSTFLOAT(0.0f);
-		fHslider1 = FAUSTFLOAT(0.1f);
+		fHslider1 = FAUSTFLOAT(1e+02f);
 		fHslider2 = FAUSTFLOAT(1.0f);
 		fHslider3 = FAUSTFLOAT(0.0f);
 		fHslider4 = FAUSTFLOAT(0.0f);
@@ -350,7 +350,7 @@ struct _gr1 final : public ::faust::dsp {
 		ui_interface->declare(&fHslider9, "00", "");
 		ui_interface->addHorizontalSlider("Interpolation length (samples)", &fHslider9, FAUSTFLOAT(16.0f), FAUSTFLOAT(4.0f), FAUSTFLOAT(64.0f), FAUSTFLOAT(1.0f));
 		ui_interface->declare(&fHslider1, "01", "");
-		ui_interface->addHorizontalSlider("Grain length (s)", &fHslider1, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.001f), FAUSTFLOAT(3.2f), FAUSTFLOAT(1e-06f));
+		ui_interface->addHorizontalSlider("Grain length (ms)", &fHslider1, FAUSTFLOAT(1e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(6.4e+03f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fHslider5, "02", "");
 		ui_interface->addHorizontalSlider("Buffer position", &fHslider5, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(1e-06f));
 		ui_interface->declare(&fHslider6, "03", "");
@@ -378,7 +378,7 @@ struct _gr1 final : public ::faust::dsp {
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
 		float fSlow0 = std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider0)));
-		float fSlow1 = fConst0 * std::max<float>(0.001f, std::min<float>(3.2f, float(fHslider1)));
+		float fSlow1 = fConst0 * std::max<float>(1.0f, std::min<float>(6.4e+03f, float(fHslider1)));
 		float fSlow2 = std::max<float>(-16.0f, std::min<float>(16.0f, float(fHslider2)));
 		float fSlow3 = std::max<float>(0.0f, std::min<float>(1e+03f, float(fHslider3)));
 		float fSlow4 = std::exp(-3.1415927f * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider4))));
@@ -634,7 +634,7 @@ struct _gr1 final : public ::faust::dsp {
 	#define FAUST_PASSIVES 0
 
 	FAUST_ADDHORIZONTALSLIDER("Interpolation length (samples)", fHslider9, 16.0f, 4.0f, 64.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Grain length (s)", fHslider1, 0.1f, 0.001f, 3.2f, 1e-06f);
+	FAUST_ADDHORIZONTALSLIDER("Grain length (ms)", fHslider1, 1e+02f, 1.0f, 6.4e+03f, 0.001f);
 	FAUST_ADDHORIZONTALSLIDER("Buffer position", fHslider5, 0.0f, 0.0f, 1.0f, 1e-06f);
 	FAUST_ADDHORIZONTALSLIDER("Time transposition", fHslider6, 1.0f, -16.0f, 16.0f, 1e-06f);
 	FAUST_ADDHORIZONTALSLIDER("Time async degree", fHslider8, 0.0f, 0.0f, 1.0f, 1e-06f);
@@ -647,7 +647,7 @@ struct _gr1 final : public ::faust::dsp {
 
 	#define FAUST_LIST_ACTIVES(p) \
 		p(HORIZONTALSLIDER, Interpolation_length_(samples), "Interpolation length (samples)", fHslider9, 16.0f, 4.0f, 64.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Grain_length_(s), "Grain length (s)", fHslider1, 0.1f, 0.001f, 3.2f, 1e-06f) \
+		p(HORIZONTALSLIDER, Grain_length_(ms), "Grain length (ms)", fHslider1, 1e+02f, 1.0f, 6.4e+03f, 0.001f) \
 		p(HORIZONTALSLIDER, Buffer_position, "Buffer position", fHslider5, 0.0f, 0.0f, 1.0f, 1e-06f) \
 		p(HORIZONTALSLIDER, Time_transposition, "Time transposition", fHslider6, 1.0f, -16.0f, 16.0f, 1e-06f) \
 		p(HORIZONTALSLIDER, Time_async_degree, "Time async degree", fHslider8, 0.0f, 0.0f, 1.0f, 1e-06f) \

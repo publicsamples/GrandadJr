@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="GrandadJr" Bypassed="0" Gain="0.117489755153656"
+           Balance="0.0" VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0"
+           packageName="" BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptSlider" id="MIX" value="-14.59999847412109"/>
+            <Control type="ScriptSlider" id="LOWPASS" value="-4.699998378753662"/>
+            <Control type="ScriptSlider" id="Harm1" value="1.0"/>
+            <Control type="ScriptSlider" id="Spread1" value="0.4699999988079071"/>
+            <Control type="ScriptSlider" id="Mix1" value="0.300000011920929"/>
+            <Control type="ScriptSlider" id="Pan1" value="1.0"/>
+            <Control type="ScriptSlider" id="WIN1" value="0.0"/>
+            <Control type="ScriptSlider" id="InputG1" value="0.4000000059604645"/>
+            <Control type="ScriptButton" id="SYNC" value="0.0"/>
+            <Control type="ScriptSlider" id="Pan" value="0.4799999892711639"/>
+            <Control type="ScriptSlider" id="Time" value="0.0"/>
+            <Control type="ScriptSlider" id="Pitch" value="0.0"/>
+            <Control type="ScriptButton" id="Freeze" value="0.0"/>
+            <Control type="ScriptSlider" id="IntLength" value="16.0"/>
+            <Control type="ScriptSlider" id="RecTempo" value="0.0"/>
+            <Control type="ScriptSlider" id="RecDiv" value="1.0"/>
+            <Control type="ScriptSlider" id="TrigGain" value="10.0"/>
+            <Control type="ScriptButton" id="Trig" value="1.0"/>
+            <Control type="ScriptSlider" id="Note" value="64.0"/>
+            <Control type="ScriptButton" id="ModIn" value="0.0"/>
+            <Control type="ScriptSlider" id="Dense" value="0.8899999856948853"/>
+            <Control type="ScriptTable" id="Table1" value="0.0" data="36...............vO....+....9C...vO...f+.....f7++uO"/>
+            <Control type="ScriptSlider" id="Tempo" value="0.0"/>
+            <Control type="ScriptSlider" id="Div" value="1.0"/>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="{INTERNAL}"
+                     rangeStart="0" rangeEnd="0"/>
+            <Control type="ScriptSlider" id="GrainSize" value="1.870000004768372"/>
+            <Control type="ScriptSlider" id="GranMix" value="1.0"/>
+            <Control type="ScriptSlider" id="Position" value="0.0"/>
+            <Control type="ScriptSlider" id="PositionMod" value="1.0"/>
+            <Control type="ScriptButton" id="MODE" value="0.0"/>
+            <Control type="ScriptSlider" id="Harm2" value="0.0"/>
+            <Control type="ScriptSlider" id="Spread2" value="1.0"/>
+            <Control type="ScriptSlider" id="Mix2" value="0.7200000286102295"/>
+            <Control type="ScriptSlider" id="Pan2" value="0.0"/>
+            <Control type="ScriptSlider" id="WIN2" value="0.449999988079071"/>
+            <Control type="ScriptSliderPack" id="ScriptSliderPack2" value="31.0" data="128...........PyLyTOrGEt8jBWO3C6QgiOw0ih9LyLy5SgqGsOOJb89DWOJ7iT35wOyLyL+PgqG8SOJb0OCWOZ+rGEt8yiBW2OHEtd+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C"/>
+            <Control type="ScriptSlider" id="OCT2" value="0.0"/>
+            <Control type="ScriptSlider" id="VOICES2" value="32.0"/>
+            <Control type="ScriptButton" id="PRESETS" value="0.0"/>
+          </Content>
+          <UIData Source="GrandadJrUIData"/>
+        </Processor>
+        <Processor Type="ScriptProcessor" ID="Script Processor1" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptSlider" id="Note" value="64.0"/>
+          </Content>
+          <UIData>
+            <ContentProperties DeviceType="Desktop">
+              <Component type="ScriptSlider" id="Note" x="270.0" y="0.0" min="-40.0" max="88.0"
+                         middlePosition="64.0" stepSize="1.0" defaultValue="64.0"/>
+            </ContentProperties>
+          </UIData>
+        </Processor>
+        <Processor Type="Transposer" ID="Transposer1" Bypassed="1" TransposeAmount="9.0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptFX" ID="ModIn" Bypassed="0" NumAudioFiles="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="ModIn" Version="0.0.0"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+        <Processor Type="ScriptFX" ID="Space1" Bypassed="0" NumSliderPacks="1" NumAudioFiles="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="spacer1" Version="0.0.0"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+        <Processor Type="ScriptFX" ID="Gthng" Bypassed="0" NumTables="1" NumSliderPacks="9"
+                   NumAudioFiles="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="PolyGrain" Version="0.0.0"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+        <Processor Type="Hardcoded Master FX" ID="Space2" Bypassed="0" Network="spacer2"
+                   Clones="32.0" Harm="0.0" deltime="1.0" win="0.449999988079071"
+                   pan="0.7200000286102295" gain="0.4620000123977661" Mix="0.0"
+                   Oct="0.0">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <SliderPacks>
+            <SliderPack EmbeddedData="128...........PyLyTOrGEt8jBWO3C6QgiOw0ih9LyLy5SgqGsOOJb89DWOJ7iT35wOyLyL+PgqG8SOJb0OCWOZ+rGEt8yiBW2OHEtd+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C"/>
+          </SliderPacks>
+        </Processor>
+        <Processor Type="SimpleGain" ID="Simple Gain1" Bypassed="0" Gain="-4.699998378753662"
+                   Delay="0.0" Width="43.23749923706055" Balance="0.0" InvertPolarity="0.0">
+          <ChildProcessors>
+            <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1.0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1.0">
+              <ChildProcessors/>
+            </Processor>
+            <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1.0">
+              <ChildProcessors/>
+            </Processor>
+          </ChildProcessors>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="GlobalModulatorContainer" ID="Global Modulator Container1"
+               Bypassed="0" Gain="0.25" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+               IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Global Modulators" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

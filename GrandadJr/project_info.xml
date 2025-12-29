@@ -2,9 +2,9 @@
 
 <ProjectSettings>
   <Name value="GrandadJr"/>
-  <Version value="0.0.1"/>
+  <Version value="1.0.0"/>
   <Description value=""/>
-  <BundleIdentifier value="com.myCompany.product"/>
+  <BundleIdentifier value="com.modularsamples.product"/>
   <PluginCode value="Gdjr"/>
   <EmbedAudioFiles value="Yes"/>
   <EmbedImageFiles value="Yes"/>
@@ -23,7 +23,7 @@
   <VST3Category value=""/>
   <SupportMonoFX value="1"/>
   <EnableMidiInputFX value="0"/>
-  <EnableMidiOut value="1"/>
+  <EnableMidiOut value="0"/>
   <EnableSoundGeneratorsFX value="1"/>
   <VST3Support value="1"/>
   <UseRawFrontend value="No"/>

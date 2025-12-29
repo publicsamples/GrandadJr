@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="gransect2" Version="0.0.0" AllowCompilation="1">
+<Network ID="gransect2" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="gransect2" Bypassed="0" Name="gransect2"
         ShowParameters="1">
     <Nodes>
@@ -45,9 +45,6 @@
         <Parameters>
           <Parameter MinValue="4.0" MaxValue="64.0" StepSize="1.0" ID="Interpolation length (samples)"
                      Automated="1" DefaultValue="16.0"/>
-          <Parameter MinValue="0.001000000047497451" MaxValue="3.200000047683716"
-                     StepSize="9.999999974752427e-7" ID="Grain length (s)" Automated="1"
-                     DefaultValue="0.1000000014901161"/>
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
                      ID="Buffer position" Automated="1" DefaultValue="0.0"/>
           <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
@@ -66,6 +63,8 @@
                      Automated="1" DefaultValue="0.0"/>
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
                      ID="Volume" Automated="1" DefaultValue="0.0"/>
+          <Parameter MinValue="1.0" MaxValue="6400.0" StepSize="0.001000000047497451"
+                     ID="Grain length (ms)" Value="100.0"/>
         </Parameters>
         <SwitchTargets/>
       </Node>
@@ -109,7 +108,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Vol" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
-                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.9999999974752427">
         <Connections>
           <Connection NodeId="faust1" ParameterId="Volume"/>
         </Connections>

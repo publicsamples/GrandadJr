@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Pshift" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Pshift" Bypassed="0" Name="Pshift"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2"
+            ShowParameters="1">
+        <Nodes>
+          <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0" Name="minmax">
+            <ModulationTargets>
+              <Connection NodeId="faust" ParameterId="shift (semitones)"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="-24.0" MaxValue="24.0" StepSize="1" ID="Minimum" Automated="1"/>
+              <Parameter MinValue="-24.0" MaxValue="24.0" StepSize="1" ID="Maximum" DefaultValue="1.0"
+                         Automated="1"/>
+              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                         ID="Skew" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="12.0" StepSize="1.0" ID="Step" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="receive" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" TextToValueConverter="NormalizedPercentage"
+                         Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="faust" FactoryPath="core.faust" Bypassed="0" Name="faust">
+            <Properties>
+              <Property ID="ClassId" Value="shift"/>
+              <Property ID="NumParameters" Value="0"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="-12.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                         ID="shift (semitones)" Automated="1"/>
+              <Parameter MinValue="50.0" MaxValue="10000.0" StepSize="1.0" ID="window (samples)"
+                         DefaultValue="1000.0" Automated="1"/>
+              <Parameter MinValue="1.0" MaxValue="10000.0" StepSize="1.0" ID="xfade (samples)"
+                         DefaultValue="10.0" Automated="1"/>
+            </Parameters>
+            <SwitchTargets/>
+          </Node>
+          <Node ID="send" FactoryPath="routing.send" Bypassed="0" Name="send">
+            <Properties>
+              <Property ID="Connection" Value="receive"/>
+            </Properties>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="min" MinValue="-24.0" MaxValue="24.0" StepSize="1.0" ModColour="0"
+                 ExternalModulation="Disabled" DefaultValue="" Value="-24.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Minimum"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="max" MinValue="-24.0" MaxValue="24.0" StepSize="1.0" ModColour="0"
+                 ExternalModulation="Disabled" DefaultValue="" Value="24.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Maximum"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="step" MinValue="0.0" MaxValue="12.0" StepSize="1.0" ModColour="0"
+                 ExternalModulation="Disabled" DefaultValue="" Value="12.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Step"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="value" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.1050103759765625">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="feed" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
+                 DefaultValue="" Value="0.4780523681640625">
+        <Connections>
+          <Connection NodeId="receive" ParameterId="Feedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="win" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="window (samples)"/>
+          <Connection NodeId="faust" ParameterId="xfade (samples)"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

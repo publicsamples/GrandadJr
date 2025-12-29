@@ -17,7 +17,7 @@ KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
 
 	g.setColour(0x00000000);
 
-	var radius = 50 - obj.clicked;
+	var radius = 30 - obj.clicked;
 
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 2));
 	g.fillEllipse(Rect.translated(Rect.withSizeKeepingCentre(obj.area, radius + 2, radius +2), 0, 3));
@@ -33,7 +33,7 @@ KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
 	
 	g.setColour( obj.itemColour1);
 	g.drawPath(p, Rect.reduced(obj.area, 5), 4);
-	g.setColour(underDrag ? 0xFF303030 : 0xFF303030);
+	g.setColour(underDrag ? 0xFFBBD2E5 : 0xFFBBD2E5);
 	g.drawPath(p, Rect.reduced(obj.area, 1), 2);
 
 	p = Content.createPath();
@@ -71,13 +71,13 @@ KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
 	
 	if(underDrag)
 	{
-		g.setColour(0xFF515151);
+		g.setColour(0xFFBBD2E5);
 
 		
 		g.fillEllipse(Rect.reduced(obj.area, 6));
 	}
 	
-	g.setColour(Colours.black);
+	g.setColour(0xFFBBD2E5);
 	g.rotate(-2.66 + obj.valueNormalized * 2.66 * 2, Rect.getCentre(obj.area));
 	g.fillRect(Rect.translated(Rect.withSizeKeepingCentre(obj.area, 2, 11), 0, -8));
 	
@@ -90,4 +90,21 @@ KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
 
 
 
+  const var ModKbs = [Content.getComponent("ScriptSlider1"),
+                      Content.getComponent("ScriptSlider2"),
+                      Content.getComponent("ScriptSlider4"),
+                      Content.getComponent("ScriptSlider3"),
+                      Content.getComponent("ScriptSlider7"),
+                      Content.getComponent("ScriptSlider9"),
+                      Content.getComponent("ScriptSlider6"),
+                      Content.getComponent("ScriptSlider10"),
+                      Content.getComponent("ScriptSlider11"),
+                      Content.getComponent("ScriptSlider12"),
+                      Content.getComponent("ScriptSlider13"),
+                      Content.getComponent("ScriptSlider8"),
+                      Content.getComponent("ScriptSlider5")];
   
+
+for(s in ModKbs)
+      s.setLocalLookAndFeel(KnobLaf1);  
+                     

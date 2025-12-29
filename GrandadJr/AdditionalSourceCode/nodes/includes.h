@@ -9,20 +9,40 @@
 
 // Include third party header files ----------------
 
+#include "bpf.h"
 #include "comb.h"
 #include "gr1.h"
 #include "gr2.h"
+#include "Hpd.h"
+#include "Hpf.h"
+#include "Lpf.h"
 #include "shift.h"
 #include "tank.h"
 #include "Wavefolder.h"
 
 // Include compiled network files ------------------
 
-#include "delStage.h"
+#include "delStage_networkdata.h"
+#include "FeedJ.h"
+#include "Filter_networkdata.h"
 #include "gransect.h"
-#include "gransect2.h"
+#include "gransect2_networkdata.h"
+#include "inout4_networkdata.h"
+#include "inout5_networkdata.h"
+#include "input3_networkdata.h"
+#include "inputroute2_networkdata.h"
+#include "InputRoute_networkdata.h"
+#include "io2_networkdata.h"
+#include "io3_networkdata.h"
+#include "io4_networkdata.h"
+#include "io5_networkdata.h"
+#include "io6_networkdata.h"
+#include "mod.h"
 #include "ModIn_networkdata.h"
-#include "PolyGrain_networkdata.h"
+#include "PolyGrain.h"
+#include "Pshift.h"
+#include "Routing_networkdata.h"
+#include "rout_networkdata.h"
 #include "spacer1_networkdata.h"
 #include "spacer2.h"
 

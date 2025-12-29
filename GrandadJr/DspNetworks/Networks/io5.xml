@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="io5" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="io5" Bypassed="0" Name="io3"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+        <Nodes>
+          <Node ID="receive" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="global_send" FactoryPath="routing.global_send" Bypassed="0"
+                Name="global_send" NodeColour="4283648178">
+            <Properties>
+              <Property ID="Connection" Value="Clip"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="comp1" FactoryPath="dynamics.comp" Bypassed="0" Name="comp1">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="-100.0" MaxValue="-6.0" StepSize="0.1000000014901161"
+                         SkewFactor="5.422270774841309" ID="Threshhold" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                         SkewFactor="0.4306765496730804" ID="Attack" Value="50.3000007495284"
+                         DefaultValue="50.0"/>
+              <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                         SkewFactor="0.4306765496730804" ID="Release" Value="42.200000628829"
+                         DefaultValue="50.0"/>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                         SkewFactor="0.2968033850193024" ID="Ratio" Value="2.100000016391277"
+                         DefaultValue="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="send" FactoryPath="routing.send" Bypassed="0" Name="send">
+            <Properties>
+              <Property ID="Connection" Value="receive"/>
+            </Properties>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split1">
+            <Nodes>
+              <Node ID="global_receive14" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4289874044">
+                <Properties>
+                  <Property ID="Connection" Value="Master"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_receive15" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4282877618">
+                <Properties>
+                  <Property ID="Connection" Value="File"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_receive16" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4282935218">
+                <Properties>
+                  <Property ID="Connection" Value="Modifier"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_receive17" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4282953906">
+                <Properties>
+                  <Property ID="Connection" Value="SVF"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_receive18" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4283648178">
+                <Properties>
+                  <Property ID="Connection" Value="Clip"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_receive19" FactoryPath="routing.global_receive" Bypassed="0"
+                    Name="global_receive" NodeColour="4283910322">
+                <Properties>
+                  <Property ID="Connection" Value="Filter2"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="1" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="global_receive14" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="2" Value="0.0">
+        <Connections>
+          <Connection NodeId="global_receive15" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="3" Value="0.0">
+        <Connections>
+          <Connection NodeId="global_receive16" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="4" Value="0.0">
+        <Connections>
+          <Connection NodeId="global_receive17" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="5" Value="0.0">
+        <Connections>
+          <Connection NodeId="global_receive18" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="6" Value="0.0">
+        <Connections>
+          <Connection NodeId="global_receive19" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Feed" Value="0.0">
+        <Connections>
+          <Connection NodeId="receive" ParameterId="Feedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-100.0" MaxValue="-6.0" StepSize="0.1000000014901161"
+                 SkewFactor="5.422270774841309" ID="Thresh" Value="-6.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="comp1" ParameterId="Threshhold"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SendGain" Value="0.3215152893066406"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="PitchShift"
+                 Value="3.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="-12.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                 ID="Pitch" Value="-12.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Window" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Xfade" Value="3.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Div" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

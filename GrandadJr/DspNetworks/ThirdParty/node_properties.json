@@ -1,7 +1,11 @@
 {
+  "bpf": [],
   "comb": [],
   "gr1": [],
   "gr2": [],
+  "Hpd": [],
+  "Hpf": [],
+  "Lpf": [],
   "shift": [],
   "tank": [],
   "Wavefolder": []
