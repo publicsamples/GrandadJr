@@ -33,14 +33,14 @@
   <ReadOnlyFactoryPresets value="No"/>
   <ForceStereoOutput value="No"/>
   <AdminPermissions value="No"/>
-  <EmbedUserPresets value="Yes"/>
+  <EmbedUserPresets value="0"/>
   <OverwriteOldUserPresets value="No"/>
   <EnableGlobalPreprocessor value="No"/>
   <UseGlobalAppDataFolderWindows value="No"/>
   <UseGlobalAppDataFolderMacOS value="No"/>
   <DefaultUserPreset value=""/>
   <CompileWithPerfetto value="No"/>
-  <CompileWithDebugSymbols value="No"/>
+  <CompileWithDebugSymbols value="1"/>
   <IncludeLorisInFrontend value="No"/>
   <ProjectType value="Instrument"/>
 </ProjectSettings>

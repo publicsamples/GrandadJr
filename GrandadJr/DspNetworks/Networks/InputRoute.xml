@@ -71,7 +71,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="1" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="1" Value="0.0">
         <Connections>
           <Connection NodeId="global_receive9" ParameterId="Value"/>
         </Connections>

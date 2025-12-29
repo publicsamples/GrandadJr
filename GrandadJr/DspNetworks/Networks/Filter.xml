@@ -153,7 +153,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="0.9300000071525574"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Value"/>
         </Connections>
@@ -177,7 +178,7 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" ID="Res"
-                 Value="0.300000011920929" DefaultValue="0.0" TextToValueConverter=""
+                 Value="9.899999618530273" DefaultValue="0.0" TextToValueConverter=""
                  SkewFactor="0.2647178173065186">
         <Connections>
           <Connection NodeId="svf" ParameterId="Q"/>
