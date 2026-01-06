@@ -1,4 +1,4 @@
-Content.makeFrontInterface(822, 790);
+Content.makeFrontInterface(822, 658);
 //Settings.setZoomLevel(0.85);
 include("GeneralLAF.js");
 include("Rect.js");
@@ -27,7 +27,7 @@ Content.getComponent("PRESETS").setControlCallback(onPRESETSControl);
 const var GrainSize = Content.getComponent("GrainSize");
 const var GrainSize1 = Content.getComponent("GrainSize1");
 
-
+const var Gthng = Synth.getEffect("Gthng");
 
 inline function onMODE1Control(component, value)
 {
