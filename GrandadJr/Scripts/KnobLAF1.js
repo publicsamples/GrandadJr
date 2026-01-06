@@ -100,7 +100,6 @@ KnobLaf1.registerFunction("drawRotarySlider", function(g, obj)
                       Content.getComponent("ScriptSlider10"),
                       Content.getComponent("ScriptSlider11"),
                       Content.getComponent("ScriptSlider12"),
-                      Content.getComponent("ScriptSlider13"),
                       Content.getComponent("ScriptSlider8"),
                       Content.getComponent("ScriptSlider5")];
   

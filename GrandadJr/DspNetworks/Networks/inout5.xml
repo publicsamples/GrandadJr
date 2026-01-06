@@ -6,6 +6,15 @@
     <Nodes>
       <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
         <Nodes>
+          <Node ID="global_send" FactoryPath="routing.global_send" Bypassed="0"
+                Name="global_send" NodeColour="4282888838">
+            <Properties>
+              <Property ID="Connection" Value="Filter"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
           <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
             <Nodes>
               <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
@@ -233,8 +242,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Master" Value="0.7200000286102295"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Master" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="gain1" ParameterId="Gain"/>
         </Connections>

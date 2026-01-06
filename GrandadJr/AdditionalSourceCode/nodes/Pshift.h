@@ -18,15 +18,14 @@ namespace Pshift_impl
 template <int NV>
 using minmax_t = control::minmax<NV, 
                                  parameter::plain<project::shift<NV>, 0>>;
-template <int NV>
-using stereo_cable = cable::block<NV, 2>;
+using stereo_cable = cable::block<2>;
 
 template <int NV>
 using chain2_t = container::chain<parameter::empty, 
                                   wrap::fix<2, minmax_t<NV>>, 
-                                  routing::receive<NV, stereo_cable<NV>>, 
+                                  routing::receive<stereo_cable>, 
                                   project::shift<NV>, 
-                                  routing::send<NV, stereo_cable<NV>>>;
+                                  routing::send<stereo_cable>>;
 
 namespace Pshift_t_parameters
 {
@@ -69,15 +68,14 @@ using step = parameter::plain<Pshift_impl::minmax_t<NV>,
 template <int NV>
 using value = parameter::plain<Pshift_impl::minmax_t<NV>, 
                                0>;
-template <int NV>
-using feed = parameter::plain<routing::receive<NV, stereo_cable<NV>>, 
+using feed = parameter::plain<routing::receive<stereo_cable>, 
                               0>;
 template <int NV>
 using Pshift_t_plist = parameter::list<min<NV>, 
                                        max<NV>, 
                                        step<NV>, 
                                        value<NV>, 
-                                       feed<NV>, 
+                                       feed, 
                                        win<NV>>;
 }
 
@@ -100,27 +98,20 @@ template <int NV> struct instance: public Pshift_impl::Pshift_t_<NV>
 		
 		SNEX_METADATA_ID(Pshift);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(96)
+		SNEX_METADATA_ENCODED_PARAMETERS(90)
 		{
-			0x005C, 0x0000, 0x0000, 0x696D, 0x006E, 0x0000, 0xC000, 0x00C1, 
-            0xC000, 0x0041, 0xC000, 0x00C1, 0x8000, 0x003F, 0x8000, 0x5C3F, 
-            0x0100, 0x0000, 0x6D00, 0x7861, 0x0000, 0x0000, 0xC1C0, 0x0000, 
-            0x41C0, 0x0000, 0x41C0, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
-            0x0002, 0x0000, 0x7473, 0x7065, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x4140, 0x0000, 0x4140, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 
-            0x0003, 0x0000, 0x6176, 0x756C, 0x0065, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0xAE3F, 0xD70F, 0x003D, 0x8000, 0x003F, 0x0000, 0x5C00, 
-            0x0400, 0x0000, 0x6600, 0x6565, 0x0064, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x483F, 0xF4C3, 0x003E, 0x8000, 0x003F, 0x0000, 0x5C00, 
-            0x0500, 0x0000, 0x7700, 0x6E69, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000
-		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
-		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x005B, 0x0000, 0x6D00, 0x6E69, 0x0000, 0xC000, 0x00C1, 0xC000, 
+            0x0041, 0xC000, 0x00C1, 0x8000, 0x003F, 0x8000, 0x5B3F, 0x0001, 
+            0x0000, 0x616D, 0x0078, 0x0000, 0xC1C0, 0x0000, 0x41C0, 0x0000, 
+            0x41C0, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x025B, 0x0000, 0x7300, 
+            0x6574, 0x0070, 0x0000, 0x0000, 0x0000, 0x4140, 0x0000, 0x4140, 
+            0x0000, 0x3F80, 0x0000, 0x3F80, 0x035B, 0x0000, 0x7600, 0x6C61, 
+            0x6575, 0x0000, 0x0000, 0x0000, 0x8000, 0xAE3F, 0xD70F, 0x003D, 
+            0x8000, 0x003F, 0x0000, 0x5B00, 0x0004, 0x0000, 0x6566, 0x6465, 
+            0x0000, 0x0000, 0x0000, 0x8000, 0x483F, 0xF4C3, 0x003E, 0x8000, 
+            0x003F, 0x0000, 0x5B00, 0x0005, 0x0000, 0x6977, 0x006E, 0x0000, 
+            0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000
 		};
 	};
 	
@@ -130,9 +121,9 @@ template <int NV> struct instance: public Pshift_impl::Pshift_t_<NV>
 		
 		auto& chain2 = this->getT(0);          // Pshift_impl::chain2_t<NV>
 		auto& minmax = this->getT(0).getT(0);  // Pshift_impl::minmax_t<NV>
-		auto& receive = this->getT(0).getT(1); // routing::receive<NV, stereo_cable<NV>>
+		auto& receive = this->getT(0).getT(1); // routing::receive<stereo_cable>
 		auto& faust = this->getT(0).getT(2);   // project::shift<NV>
-		auto& send = this->getT(0).getT(3);    // routing::send<NV, stereo_cable<NV>>
+		auto& send = this->getT(0).getT(3);    // routing::send<stereo_cable>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		

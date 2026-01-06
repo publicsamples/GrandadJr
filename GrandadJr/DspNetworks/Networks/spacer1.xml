@@ -1,12 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="spacer1" Version="0.0.0">
+<Network ID="spacer1" Version="0.0.0" AllowCompilation="1">
   <Node FactoryPath="container.chain" ID="spacer1" Bypassed="0" Name="spacer1"
         ShowParameters="1">
     <Nodes>
       <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain"
             ShowParameters="0">
         <Nodes>
+          <Node ID="modchain2" FactoryPath="container.modchain" Bypassed="0"
+                Name="modchain">
+            <Nodes>
+              <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+                <Nodes>
+                  <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4282864306">
+                    <Properties>
+                      <Property ID="Connection" Value="mod1"/>
+                    </Properties>
+                    <ModulationTargets>
+                      <Connection NodeId="add" ParameterId="Value"/>
+                      <Connection NodeId="add4" ParameterId="Value"/>
+                      <Connection NodeId="add12" ParameterId="Value"/>
+                      <Connection NodeId="add8" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4282929586">
+                    <Properties>
+                      <Property ID="Connection" Value="mod2"/>
+                    </Properties>
+                    <ModulationTargets>
+                      <Connection NodeId="add3" ParameterId="Value"/>
+                      <Connection NodeId="add5" ParameterId="Value"/>
+                      <Connection NodeId="add13" ParameterId="Value"/>
+                      <Connection NodeId="add9" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4282864306">
+                    <Properties>
+                      <Property ID="Connection" Value="mod3"/>
+                    </Properties>
+                    <ModulationTargets>
+                      <Connection NodeId="add2" ParameterId="Value"/>
+                      <Connection NodeId="add6" ParameterId="Value"/>
+                      <Connection NodeId="add14" ParameterId="Value"/>
+                      <Connection NodeId="add10" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                        Name="global_cable" NodeColour="4282864306">
+                    <Properties>
+                      <Property ID="Connection" Value="mod3"/>
+                    </Properties>
+                    <ModulationTargets>
+                      <Connection NodeId="add11" ParameterId="Value"/>
+                      <Connection NodeId="add15" ParameterId="Value"/>
+                      <Connection NodeId="add7" ParameterId="Value"/>
+                      <Connection NodeId="add1" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="clear4" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split">
+                <Nodes>
+                  <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                        <Nodes>
+                          <Node ID="branch" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                ShowParameters="1">
+                            <Nodes>
+                              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add3" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add2" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                            <ModulationTargets>
+                              <Connection NodeId="pma" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clear5" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                        <ModulationTargets>
+                          <Connection NodeId="xfader" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                        <Nodes>
+                          <Node ID="branch1" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                ShowParameters="1">
+                            <Nodes>
+                              <Node ID="add4" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add5" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add6" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add7" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                            <ModulationTargets>
+                              <Connection NodeId="pma1" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clear6" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                        <ModulationTargets>
+                          <Connection NodeId="clone_cable5" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain13" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="chain14" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                        <Nodes>
+                          <Node ID="branch3" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                ShowParameters="1">
+                            <Nodes>
+                              <Node ID="add12" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add13" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add14" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add15" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="peak3" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                            <ModulationTargets>
+                              <Connection NodeId="pma3" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clear8" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                        <ModulationTargets>
+                          <Connection NodeId="clone_cable7" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="chain12" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                        <Nodes>
+                          <Node ID="branch2" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                ShowParameters="1">
+                            <Nodes>
+                              <Node ID="add8" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add9" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add10" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="add11" FactoryPath="math.add" Bypassed="0" Name="add">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="peak2" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                            <ModulationTargets>
+                              <Connection NodeId="pma2" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="clear7" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                        <ModulationTargets>
+                          <Connection NodeId="smoothed_parameter32" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
           <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
             <Nodes>
               <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain4">
@@ -14,26 +355,6 @@
                   <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
-                    <ModulationTargets>
-                      <Connection NodeId="xfader" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                 Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                                 Automated="1"/>
                     </Parameters>
                   </Node>
                   <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
@@ -82,119 +403,47 @@
               </Node>
               <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
                 <Nodes>
-                  <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
-                        Name="modchain1">
+                  <Node ID="fix8_block" FactoryPath="container.fix8_block" Bypassed="0"
+                        Name="fix8_block">
                     <Nodes>
-                      <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3"
-                            ShowParameters="1">
+                      <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
+                            Name="modchain1">
                         <Nodes>
-                          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                          <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3"
+                                ShowParameters="1">
                             <Nodes>
-                              <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                </Parameters>
+                              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                                <Nodes>
+                                  <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
+                                        Name="clone_cable">
+                                    <Properties>
+                                      <Property ID="Mode" Value="Spread"/>
+                                    </Properties>
+                                    <ModulationTargets>
+                                      <Connection NodeId="FeedJ" ParameterId="pan"/>
+                                    </ModulationTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                                 DefaultValue="1.0" Value="32.0"/>
+                                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
                               </Node>
-                              <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
-                                <ModulationTargets>
-                                  <Connection NodeId="clone_cable" ParameterId="Value"/>
-                                  <Connection NodeId="clone_cable5" ParameterId="Value"/>
-                                </ModulationTargets>
-                                <ComplexData>
-                                  <DisplayBuffers>
-                                    <DisplayBuffer Index="-1"/>
-                                  </DisplayBuffers>
-                                </ComplexData>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                             Value="0.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                             DefaultValue="0.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                                             Automated="1"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
-                                    Name="clone_cable">
-                                <Properties>
-                                  <Property ID="Mode" Value="Spread"/>
-                                </Properties>
-                                <Parameters>
-                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                             DefaultValue="1.0" Value="32.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
-                                    Name="clone_cable">
-                                <Properties>
-                                  <Property ID="Mode" Value="Spread"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ" ParameterId="pan"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                             DefaultValue="1.0" Value="32.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                                </Parameters>
-                              </Node>
-                            </Nodes>
-                            <Parameters/>
-                          </Node>
-                          <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
-                                Name="clone_cable">
-                            <Properties>
-                              <Property ID="Mode" Value="Fixed"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="FeedJ" ParameterId="fb"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                         DefaultValue="1.0" Value="32.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain4">
-                            <Nodes>
-                              <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear">
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="global_mod2" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
-                                <ModulationTargets>
-                                  <Connection NodeId="clone_cable7" ParameterId="Value"/>
-                                </ModulationTargets>
-                                <ComplexData>
-                                  <DisplayBuffers>
-                                    <DisplayBuffer Index="-1"/>
-                                  </DisplayBuffers>
-                                </ComplexData>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                             Value="0.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                             DefaultValue="0.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                                             Automated="1"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0"
+                              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
                                     Name="clone_cable">
                                 <Properties>
                                   <Property ID="Mode" Value="Fixed"/>
                                 </Properties>
                                 <ModulationTargets>
-                                  <Connection NodeId="FeedJ" ParameterId="lp"/>
+                                  <Connection NodeId="FeedJ" ParameterId="fb"/>
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
@@ -203,50 +452,70 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
                                 </Parameters>
                               </Node>
-                            </Nodes>
-                            <Parameters/>
-                          </Node>
-                          <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="chain4">
-                            <Nodes>
-                              <Node ID="clear3" FactoryPath="math.clear" Bypassed="0" Name="clear">
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                </Parameters>
+                              <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                                <Nodes>
+                                  <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0"
+                                        Name="clone_cable">
+                                    <Properties>
+                                      <Property ID="Mode" Value="Fixed"/>
+                                    </Properties>
+                                    <ModulationTargets>
+                                      <Connection NodeId="FeedJ" ParameterId="lp"/>
+                                    </ModulationTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                                 DefaultValue="1.0" Value="32.0"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
                               </Node>
-                              <Node ID="global_mod3" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
-                                <ModulationTargets>
-                                  <Connection NodeId="clone_cable4" ParameterId="Value"/>
-                                </ModulationTargets>
-                                <ComplexData>
-                                  <DisplayBuffers>
-                                    <DisplayBuffer Index="-1"/>
-                                  </DisplayBuffers>
-                                </ComplexData>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                                             Value="0.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                                             DefaultValue="0.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                                             Automated="1"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
-                                    Name="clone_cable">
-                                <Properties>
-                                  <Property ID="Mode" Value="Spread"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
-                                             DefaultValue="1.0" Value="32.0"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
-                                </Parameters>
+                              <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                                <Nodes>
+                                  <Node ID="clear3" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="smoothed_parameter32" FactoryPath="control.smoothed_parameter"
+                                        Bypassed="0" Name="smoothed_parameter32">
+                                    <Properties>
+                                      <Property ID="Mode" Value="Linear Ramp"/>
+                                    </Properties>
+                                    <ModulationTargets>
+                                      <Connection NodeId="clone_cable4" ParameterId="Value"/>
+                                    </ModulationTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                 ID="SmoothingTime" Value="482.4000071883202" DefaultValue="100.0"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                                        Name="clone_cable">
+                                    <Properties>
+                                      <Property ID="Mode" Value="Spread"/>
+                                    </Properties>
+                                    <ModulationTargets>
+                                      <Connection NodeId="FeedJ" ParameterId="del"/>
+                                    </ModulationTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                                 DefaultValue="1.0" Value="32.0"/>
+                                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
                               </Node>
                             </Nodes>
                             <Parameters/>
@@ -254,12 +523,6 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="fix8_block" FactoryPath="container.fix8_block" Bypassed="0"
-                        Name="fix8_block">
-                    <Nodes>
                       <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
                             ShowClones="0" ShowParameters="1">
                         <Properties>
@@ -269,22 +532,6 @@
                           <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
                                 NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
                               <Node ID="FeedJ" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
@@ -312,32 +559,16 @@
                           <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ94" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ94" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ1" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain315" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain222" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -353,32 +584,16 @@
                           <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ95" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ95" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ2" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain316" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain223" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -394,32 +609,16 @@
                           <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ96" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ96" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ3" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain317" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain224" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -435,32 +634,16 @@
                           <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ97" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ97" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ4" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain318" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain225" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -476,32 +659,16 @@
                           <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ98" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ98" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ5" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain319" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain226" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -517,32 +684,16 @@
                           <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ99" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ99" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ6" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain320" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain227" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -558,32 +709,16 @@
                           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter7" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ100" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ100" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ7" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain321" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain228" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -599,32 +734,16 @@
                           <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter8" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ101" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ101" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ8" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain322" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain229" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -640,32 +759,16 @@
                           <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter9" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ102" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ102" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ9" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain323" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain230" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -681,32 +784,16 @@
                           <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter10" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ103" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ103" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ10" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain324" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain231" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -722,32 +809,16 @@
                           <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter11" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ104" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ104" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ11" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain325" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain232" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -763,32 +834,16 @@
                           <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter12" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ105" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ105" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ12" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain326" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain233" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -804,32 +859,16 @@
                           <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter13" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ106" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ106" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ13" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain327" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain234" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -845,32 +884,16 @@
                           <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter14" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ107" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ107" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ14" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain328" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain235" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -886,32 +909,16 @@
                           <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter15" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ108" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ108" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ15" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain329" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain236" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -927,32 +934,16 @@
                           <Node ID="clone_child16" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter16" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ109" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ109" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ16" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain330" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain237" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -968,32 +959,16 @@
                           <Node ID="clone_child17" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter17" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ110" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ110" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ17" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain331" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain238" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1009,32 +984,16 @@
                           <Node ID="clone_child18" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter18" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ111" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ111" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ18" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain332" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain239" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1050,32 +1009,16 @@
                           <Node ID="clone_child19" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter19" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ112" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ112" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ19" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain333" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain240" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1091,32 +1034,16 @@
                           <Node ID="clone_child20" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter20" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ113" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ113" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ20" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain334" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain241" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1132,32 +1059,16 @@
                           <Node ID="clone_child21" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter21" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ114" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ114" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ21" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain335" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain242" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1173,32 +1084,16 @@
                           <Node ID="clone_child22" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter22" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ115" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ115" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ22" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain336" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain243" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1214,32 +1109,16 @@
                           <Node ID="clone_child23" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter23" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ116" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ116" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ23" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain337" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain244" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1255,32 +1134,16 @@
                           <Node ID="clone_child24" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter24" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ117" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ117" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ24" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain338" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain245" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1296,32 +1159,16 @@
                           <Node ID="clone_child25" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter25" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ118" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ118" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ25" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain339" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain246" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1337,32 +1184,16 @@
                           <Node ID="clone_child26" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter26" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ119" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ119" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ26" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain340" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain247" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1378,32 +1209,16 @@
                           <Node ID="clone_child27" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter27" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ120" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ120" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ27" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain341" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain248" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1419,32 +1234,16 @@
                           <Node ID="clone_child28" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter28" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ121" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ121" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ28" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain342" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain249" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1460,32 +1259,16 @@
                           <Node ID="clone_child29" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter29" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ122" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ122" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ29" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain343" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain250" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1501,32 +1284,16 @@
                           <Node ID="clone_child30" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter30" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ123" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ123" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ30" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain344" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain251" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1542,32 +1309,16 @@
                           <Node ID="clone_child31" FactoryPath="container.chain" Bypassed="0"
                                 Name="clone_child" NodeColour="4287927444">
                             <Nodes>
-                              <Node ID="smoothed_parameter31" FactoryPath="control.smoothed_parameter"
-                                    Bypassed="0" Name="smoothed_parameter">
-                                <Properties>
-                                  <Property ID="Mode" Value="Linear Ramp"/>
-                                </Properties>
-                                <ModulationTargets>
-                                  <Connection NodeId="FeedJ124" ParameterId="del"/>
-                                </ModulationTargets>
-                                <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                             ID="SmoothingTime" TextToValueConverter="Time" Value="183.3000027313828"
-                                             DefaultValue="100.0"/>
-                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                                </Parameters>
-                              </Node>
-                              <Node ID="FeedJ124" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
+                              <Node ID="FeedJ31" FactoryPath="project.FeedJ" Bypassed="0" Name="FeedJ">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
-                                             ID="del" TextToValueConverter="Time" Automated="1"/>
+                                             ID="del" TextToValueConverter="Time"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="fb"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="lp" DefaultValue="0.5086093544960022"/>
                                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" DefaultValue="-0.04396874830126762"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="gain345" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                              <Node ID="gain252" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                 <Parameters>
                                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                              SkewFactor="5.422270774841309" ID="Gain" DefaultValue="" Value="-23.99999886751176"/>
@@ -1615,28 +1366,27 @@
       <Parameter ID="deltime" MinValue="-1.0" MaxValue="1.0" ExternalModulation="Disabled"
                  DefaultValue="" Value="1.0">
         <Connections>
-          <Connection NodeId="global_mod3" ParameterId="Value"/>
+          <Connection NodeId="pma2" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" Value="0.05000000074505806"
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan" Value="0.4099999964237213"
                  TextToValueConverter="" ExternalModulation="Disabled" DefaultValue="0.0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Value"/>
+          <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
       </Parameter>
       <Parameter ID="Mix" MinValue="0.0" MaxValue="1.0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.5899999737739563">
+                 DefaultValue="" Value="1.0">
         <Connections>
-          <Connection NodeId="global_mod1" ParameterId="Value"/>
+          <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="0.4799999892711639"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Value="1.0" DefaultValue="0.0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Value"/>
+          <Connection NodeId="pma3" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="0.550000011920929"
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="0.5299999713897705"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="clone_cable6" ParameterId="Value"/>
@@ -1644,46 +1394,47 @@
       </Parameter>
       <Parameter MinValue="-1.0" MaxValue="1.0" ID="PanMod" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Intensity"/>
+          <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="PanSrc" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="PanSrc" Value="1.0"
                  ExternalModulation="Disabled" ModColour="0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
+          <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="-1.0" MaxValue="1.0" ID="MixMod" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod1" ParameterId="Intensity"/>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="MixSrc" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="MixSrc" Value="1.0"
                  ExternalModulation="Disabled" ModColour="0">
         <Connections>
-          <Connection NodeId="global_mod1" ParameterId="Index"/>
+          <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="LpMod" Value="0.001625" DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="LpMod" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Intensity"/>
+          <Connection NodeId="pma3" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="LpSrc" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="LpSrc" Value="3.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Index"/>
+          <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="delMod" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="delMod" Value="-0.009999999776482582"
+                 DefaultValue="0.0">
         <Connections>
-          <Connection NodeId="global_mod3" ParameterId="Intensity"/>
+          <Connection NodeId="pma2" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="delSrc" Value="1.0"
-                 ExternalModulation="Disabled" ModColour="0">
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="delSrc" Value="3.0"
+                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
         <Connections>
-          <Connection NodeId="global_mod3" ParameterId="Index"/>
+          <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>

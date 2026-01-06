@@ -38,13 +38,14 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::comb<1>, scriptnode::wrap::illegal_poly<project::comb<1>>>();
 		registerPolyNode<project::bpf<1>, scriptnode::wrap::illegal_poly<project::bpf<1>>>();
 		registerPolyNode<project::FeedJ<1>, wrap::illegal_poly<project::FeedJ<1>>>();
+		registerPolyNode<project::Filter<1>, wrap::illegal_poly<project::Filter<1>>>();
 		registerPolyNode<project::gransect<1>, wrap::illegal_poly<project::gransect<1>>>();
 		registerPolyNode<project::mod<1>, wrap::illegal_poly<project::mod<1>>>();
 		registerPolyNode<project::PolyGrain<1>, wrap::illegal_poly<project::PolyGrain<1>>>();
 		registerPolyNode<project::Pshift<1>, wrap::illegal_poly<project::Pshift<1>>>();
+		registerPolyNode<project::spacer1<1>, wrap::illegal_poly<project::spacer1<1>>>();
 		registerPolyNode<project::spacer2<1>, wrap::illegal_poly<project::spacer2<1>>>();
 		registerDataNode<project::delStage_networkdata>();
-		registerDataNode<project::Filter_networkdata>();
 		registerDataNode<project::gransect2_networkdata>();
 		registerDataNode<project::inout4_networkdata>();
 		registerDataNode<project::inout5_networkdata>();
@@ -59,7 +60,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::ModIn_networkdata>();
 		registerDataNode<project::rout_networkdata>();
 		registerDataNode<project::Routing_networkdata>();
-		registerDataNode<project::spacer1_networkdata>();
 	}
 };
 }

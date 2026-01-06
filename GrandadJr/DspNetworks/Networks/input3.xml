@@ -78,13 +78,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="2" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="0.0">
+                 DefaultValue="" Value="1.0">
         <Connections>
           <Connection NodeId="global_receive10" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="3" MinValue="0.0" MaxValue="1.0" ModColour="0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="1.0">
+                 DefaultValue="" Value="0.0">
         <Connections>
           <Connection NodeId="global_receive14" ParameterId="Value"/>
         </Connections>

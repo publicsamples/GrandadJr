@@ -40,7 +40,7 @@
   <UseGlobalAppDataFolderMacOS value="No"/>
   <DefaultUserPreset value=""/>
   <CompileWithPerfetto value="No"/>
-  <CompileWithDebugSymbols value="1"/>
+  <CompileWithDebugSymbols value="0"/>
   <IncludeLorisInFrontend value="No"/>
   <ProjectType value="Instrument"/>
 </ProjectSettings>

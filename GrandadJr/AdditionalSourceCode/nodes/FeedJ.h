@@ -13,14 +13,13 @@ using namespace snex::Types;
 
 namespace FeedJ_impl
 {
-// ========================| Node & Parameter type declarations |========================
+// =====================| Node & Parameter type declarations |=====================
 
-template <int NV>
-using stereo_cable = cable::block<NV, 2>;
+using stereo_cable = cable::block<2>;
 
 namespace FeedJ_t_parameters
 {
-// Parameter list for FeedJ_impl::FeedJ_t ----------------------------------------------
+// Parameter list for FeedJ_impl::FeedJ_t ----------------------------------------
 
 DECLARE_PARAMETER_RANGE_SKEW(lpRange, 
                              20., 
@@ -61,26 +60,25 @@ using pan = parameter::chain<pan_InputRange,
 
 template <int NV>
 using del = parameter::plain<jdsp::jdelay<NV>, 1>;
-template <int NV>
-using fb = parameter::plain<routing::receive<NV, stereo_cable<NV>>, 
+using fb = parameter::plain<routing::receive<stereo_cable>, 
                             0>;
 template <int NV>
 using FeedJ_t_plist = parameter::list<del<NV>, 
-                                      fb<NV>, 
+                                      fb, 
                                       lp<NV>, 
                                       pan<NV>>;
 }
 
 template <int NV>
 using FeedJ_t_ = container::chain<FeedJ_t_parameters::FeedJ_t_plist<NV>, 
-                                  wrap::fix<2, routing::receive<NV, stereo_cable<NV>>>, 
+                                  wrap::fix<2, routing::receive<stereo_cable>>, 
                                   jdsp::jdelay<NV>, 
                                   fx::phase_delay<NV>, 
                                   filters::one_pole<NV>, 
-                                  routing::send<NV, stereo_cable<NV>>, 
+                                  routing::send<stereo_cable>, 
                                   jdsp::jpanner<NV>>;
 
-// ===========================| Root node initialiser class |===========================
+// ========================| Root node initialiser class |========================
 
 template <int NV> struct instance: public FeedJ_impl::FeedJ_t_<NV>
 {
@@ -95,38 +93,31 @@ template <int NV> struct instance: public FeedJ_impl::FeedJ_t_<NV>
 		
 		SNEX_METADATA_ID(FeedJ);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(62)
+		SNEX_METADATA_ENCODED_PARAMETERS(58)
 		{
-			0x025C, 0x0000, 0x0000, 0x6564, 0x006C, 0x0000, 0x0000, 0x0000, 
-            0x7A00, 0x0044, 0x0000, 0x9B00, 0x9A20, 0x003E, 0x0000, 0x5C00, 
-            0x0100, 0x0000, 0x6600, 0x0062, 0x0000, 0x0000, 0x0000, 0x8000, 
-            0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5C00, 0x0200, 
-            0x0000, 0x6C00, 0x0070, 0x0000, 0x0000, 0x0000, 0x8000, 0x393F, 
-            0x0234, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 0x0300, 0x0000, 
-            0x7000, 0x6E61, 0x0000, 0x0000, 0xBF80, 0x0000, 0x3F80, 0x1893, 
-            0xBD34, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000
-		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
-		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x005B, 0x0000, 0x6400, 0x6C65, 0x0000, 0x0000, 0x0000, 0x7A00, 
+            0x0044, 0x0000, 0x9B00, 0x9A20, 0x003E, 0x0000, 0x5B00, 0x0001, 
+            0x0000, 0x6266, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 
+            0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0002, 0x0000, 0x706C, 
+            0x0000, 0x0000, 0x0000, 0x8000, 0x393F, 0x0234, 0x003F, 0x8000, 
+            0x003F, 0x0000, 0x5B00, 0x0003, 0x0000, 0x6170, 0x006E, 0x0000, 
+            0xBF80, 0x0000, 0x3F80, 0x1893, 0xBD34, 0x0000, 0x3F80, 0x0000, 
+            0x0000, 0x0000
 		};
 	};
 	
 	instance()
 	{
-		// Node References -------------------------------------------------------------
+		// Node References -------------------------------------------------------
 		
-		auto& receive = this->getT(0);     // routing::receive<NV, stereo_cable<NV>>
+		auto& receive = this->getT(0);     // routing::receive<stereo_cable>
 		auto& jdelay = this->getT(1);      // jdsp::jdelay<NV>
 		auto& phase_delay = this->getT(2); // fx::phase_delay<NV>
 		auto& one_pole = this->getT(3);    // filters::one_pole<NV>
-		auto& send = this->getT(4);        // routing::send<NV, stereo_cable<NV>>
+		auto& send = this->getT(4);        // routing::send<stereo_cable>
 		auto& jpanner = this->getT(5);     // jdsp::jpanner<NV>
 		
-		// Parameter Connections -------------------------------------------------------
+		// Parameter Connections -------------------------------------------------
 		
 		this->getParameterT(0).connectT(0, jdelay); // del -> jdelay::DelayTime
 		
@@ -138,11 +129,11 @@ template <int NV> struct instance: public FeedJ_impl::FeedJ_t_<NV>
 		pan_p.connectT(0, jpanner);     // pan -> jpanner::Pan
 		pan_p.connectT(1, phase_delay); // pan -> phase_delay::Frequency
 		
-		// Send Connections ------------------------------------------------------------
+		// Send Connections ------------------------------------------------------
 		
 		send.connect(receive);
 		
-		// Default Values --------------------------------------------------------------
+		// Default Values --------------------------------------------------------
 		
 		; // receive::Feedback is automated
 		
@@ -180,7 +171,7 @@ template <int NV> struct instance: public FeedJ_impl::FeedJ_t_<NV>
 #undef setParameterT
 #undef setParameterWT
 #undef getParameterT
-// ================================| Public Definition |================================
+// =============================| Public Definition |=============================
 
 namespace project
 {

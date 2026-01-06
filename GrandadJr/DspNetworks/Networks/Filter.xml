@@ -1,52 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="Filter" Version="0.0.0">
+<Network ID="Filter" Version="0.0.0" AllowCompilation="1">
   <Node FactoryPath="container.chain" ID="Filter" Bypassed="0" Name="Filter"
         ShowParameters="1">
     <Nodes>
       <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
         <Nodes>
-          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
             <Nodes>
-              <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282864306">
+                <Properties>
+                  <Property ID="Connection" Value="mod1"/>
+                </Properties>
                 <ModulationTargets>
-                  <Connection NodeId="xfader" ParameterId="Value"/>
+                  <Connection NodeId="add" ParameterId="Value"/>
+                  <Connection NodeId="add4" ParameterId="Value"/>
                 </ModulationTargets>
-                <ComplexData>
-                  <DisplayBuffers>
-                    <DisplayBuffer Index="-1"/>
-                  </DisplayBuffers>
-                </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                             Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                             DefaultValue="0.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                 </Parameters>
               </Node>
-              <Node ID="global_mod2" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
+              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282929586">
+                <Properties>
+                  <Property ID="Connection" Value="mod2"/>
+                </Properties>
                 <ModulationTargets>
-                  <Connection NodeId="svf" ParameterId="Frequency"/>
+                  <Connection NodeId="add3" ParameterId="Value"/>
+                  <Connection NodeId="add5" ParameterId="Value"/>
                 </ModulationTargets>
-                <ComplexData>
-                  <DisplayBuffers>
-                    <DisplayBuffer Index="-1"/>
-                  </DisplayBuffers>
-                </ComplexData>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ProcessSignal"
-                             Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Value="1.0"
-                             DefaultValue="0.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Intensity" DefaultValue="1.0"
-                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                 </Parameters>
+              </Node>
+              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282864306">
+                <Properties>
+                  <Property ID="Connection" Value="mod3"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="add2" ParameterId="Value"/>
+                  <Connection NodeId="add6" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282864306">
+                <Properties>
+                  <Property ID="Connection" Value="mod3"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="add1" ParameterId="Value"/>
+                  <Connection NodeId="add7" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+            <Nodes>
+              <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                    <Nodes>
+                      <Node ID="branch" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                            ShowParameters="1">
+                        <Nodes>
+                          <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add3" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add2" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                        <ModulationTargets>
+                          <Connection NodeId="pma" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                    <ModulationTargets>
+                      <Connection NodeId="xfader" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                <Nodes>
+                  <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+                    <Nodes>
+                      <Node ID="branch1" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                            ShowParameters="1">
+                        <Nodes>
+                          <Node ID="add4" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add5" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add6" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="add7" FactoryPath="math.add" Bypassed="0" Name="add">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak">
+                        <ModulationTargets>
+                          <Connection NodeId="pma1" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                    <ModulationTargets>
+                      <Connection NodeId="svf" ParameterId="Frequency"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
               </Node>
             </Nodes>
             <Parameters/>
@@ -105,15 +257,13 @@
                 </ComplexData>
                 <Parameters>
                   <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                             ID="Frequency" TextToValueConverter="Frequency" DefaultValue="1000.0"
-                             Automated="1"/>
+                             ID="Frequency" DefaultValue="1000.0" Automated="1"/>
                   <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
                              ID="Q" DefaultValue="1.0" Automated="1"/>
-                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" TextToValueConverter="Decibel"
-                             Value="0.0"/>
+                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
                              ID="Smoothing" Value="0.009999999776482582"/>
-                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                 </Parameters>
               </Node>
@@ -141,34 +291,22 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="global_send" FactoryPath="routing.global_send" Bypassed="0"
-            Name="global_send" NodeColour="4282888838">
-        <Properties>
-          <Property ID="Connection" Value="Filter"/>
-        </Properties>
-        <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.502671875"
-                     DefaultValue="1.0"/>
-        </Parameters>
-      </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="0.9300000071525574"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0" DefaultValue="0.0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Value"/>
+          <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="MixMod" Value="-0.07000000029802322"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="MixMod" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Intensity"/>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="MixSrc" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="MixSrc" Value="1.0"
                  ExternalModulation="Disabled" ModColour="0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
+          <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="Mode" Value="1.0"
@@ -178,26 +316,26 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" ID="Res"
-                 Value="9.899999618530273" DefaultValue="0.0" TextToValueConverter=""
+                 Value="0.300000011920929" DefaultValue="0.0" TextToValueConverter=""
                  SkewFactor="0.2647178173065186">
         <Connections>
           <Connection NodeId="svf" ParameterId="Q"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Cut" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Value"/>
+          <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="-1.0" MaxValue="1.0" ID="CutMod" Value="0.0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Intensity"/>
+          <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="17.0" StepSize="1.0" ID="CutSrc" Value="3.0"
-                 ExternalModulation="Disabled" ModColour="0" DefaultValue="1.0">
+      <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="CutSrc" Value="1.0"
+                 ExternalModulation="Disabled" ModColour="0">
         <Connections>
-          <Connection NodeId="global_mod2" ParameterId="Index"/>
+          <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>

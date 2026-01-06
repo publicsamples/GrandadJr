@@ -24,7 +24,7 @@
 
 #include "delStage_networkdata.h"
 #include "FeedJ.h"
-#include "Filter_networkdata.h"
+#include "Filter.h"
 #include "gransect.h"
 #include "gransect2_networkdata.h"
 #include "inout4_networkdata.h"
@@ -43,7 +43,7 @@
 #include "Pshift.h"
 #include "Routing_networkdata.h"
 #include "rout_networkdata.h"
-#include "spacer1_networkdata.h"
+#include "spacer1.h"
 #include "spacer2.h"
 
 #if (defined (_WIN32) || defined (_WIN64))

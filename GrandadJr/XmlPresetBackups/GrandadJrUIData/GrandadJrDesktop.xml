@@ -260,10 +260,9 @@
                scaleFactor="0.05999999865889549" processorId="Gthng" parameterId="Bypass"/>
     <Component type="ScriptSlider" id="GrainPitch" x="241.0" y="50.0" width="50.0"
                height="50.0" parentComponent="Granular" processorId="Gthng"
-               parameterId="Pitch" text="Pan" middlePosition="0.5" itemColour="4287735995"
+               parameterId="Pitch" text="Pan" middlePosition="0.0" itemColour="4287735995"
                bgColour="4293328383" itemColour2="4287735995" showValuePopup="Below"
-               isPluginParameter="1" pluginParameterName="Grain Pitch" min="-24.0"
-               max="24.0" stepSize="1.0"/>
+               isPluginParameter="1" pluginParameterName="Grain Pitch" min="-1.0"/>
     <Component type="ScriptLabel" id="ScriptLabel40" x="237.0" y="104.0" width="70.0"
                height="20.0" parentComponent="Granular" editable="0" text="PITCH"
                fontName="std" fontSize="14.0"/>
@@ -367,7 +366,7 @@
                itemColour2="4293328383" textColour="4293328383" borderSize="0.0"
                borderRadius="0.0" bgColour="4293328383"/>
     <Component type="ScriptSlider" id="SpaceFeed2" x="262.0" y="51.0" width="50.0"
-               height="50.0" parentComponent="Space3" processorId="Space2" parameterId="feed"
+               height="50.0" parentComponent="Space3" processorId="Space2" parameterId="fb"
                text="Pitch" itemColour2="4287735995" itemColour="4287735995"
                bgColour="4293328383" showValuePopup="Below" middlePosition="0.5"
                isPluginParameter="1" pluginParameterName="Space 1 Feedback"/>
@@ -523,8 +522,7 @@
                fontName="std" fontSize="14.0" processorId="Mod3"/>
     <Component type="ScriptTable" id="Table3" x="11.0" y="100.0" width="180.0"
                height="60.0" processorId="Mod3" parentComponent="Mod3" customColours="1"
-               itemColour="3538353663" bgColour="4287735995" itemColour2="4292205794"
-               visible="0"/>
+               itemColour="3538353663" bgColour="4287735995" itemColour2="4292205794"/>
     <Component type="ScriptSlider" id="Tempo2" x="76.0" y="5.0" width="50.0"
                height="50.0" parentComponent="Mod3" processorId="Mod3" parameterId="Tempo"
                mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
@@ -543,7 +541,7 @@
                bgColour="4293328383" textColour="4278190080" scaleFactor="0.05000000074505806"/>
     <Component type="ScriptSliderPack" id="ScriptSliderPack3" x="11.0" y="100.0"
                width="180.0" height="60.0" parentComponent="Mod3" itemColour="4279314491"
-               bgColour="4293328383" processorId="Mod3" itemColour2="0"/>
+               bgColour="4293328383" processorId="Mod3" itemColour2="0" visible="0"/>
     <Component type="ScriptLabel" id="ScriptLabel33" x="29.0" y="37.0" width="40.0"
                height="10.0" parentComponent="Mod3" editable="0" text="Mode"
                fontName="std" fontSize="14.0" textColour="4287334022" processorId="Mod3"
@@ -680,9 +678,9 @@
                scaleFactor="0.05999999865889549" processorId="Filter" parameterId="Bypass"/>
     <Component type="ScriptSlider" id="SvfRes" x="244.0" y="57.0" width="50.0"
                height="50.0" parentComponent="Space2" processorId="Filter" parameterId="Res"
-               text="Pan" middlePosition="5.5" itemColour="4287735995" bgColour="4293328383"
+               text="Pan" middlePosition="4.5" itemColour="4287735995" bgColour="4293328383"
                itemColour2="4287735995" showValuePopup="Below" isPluginParameter="1"
-               pluginParameterName="SVF Resonance" min="1.0" max="10.0"/>
+               pluginParameterName="SVF Resonance" max="9.0"/>
     <Component type="ScriptButton" id="InSelA13" x="175.0" y="7.0" width="50.0"
                height="20.0" parentComponent="Space2" text="master" radioGroup="4.0"
                processorId="io4" parameterId="1"/>
@@ -716,6 +714,6 @@
                textColour="4293328383" Font="bold"/>
   </Component>
   <Component type="ScriptPanel" id="Panel1" x="0.0" y="0.0" width="822.0"
-             height="790.0" enabled="0" itemColour="1614093074" itemColour2="1613305103"
+             height="790.0" enabled="0" itemColour="1612190261" itemColour2="1611600425"
              locked="1" bgColour="1432230426"/>
 </ContentProperties>

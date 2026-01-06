@@ -17,13 +17,13 @@
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
                      ID="Buffer position" Automated="1"/>
           <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
-                     ID="Time transposition" Value="-4.039611667394638e-8" DefaultValue="1.0"/>
+                     ID="Time transposition" Value="0.3999999585939804" DefaultValue="1.0"/>
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
-                     ID="Time async degree" Value="0.0009529999975939063" DefaultValue="0.0"/>
+                     ID="Time async degree" Value="0.0"/>
           <Parameter MinValue="0.0" MaxValue="1.92e6" StepSize="9.999999974752427e-7"
                      ID="Time async depth" Value="0.0"/>
-          <Parameter MinValue="-16.0" MaxValue="16.0" StepSize="9.999999974752427e-7"
-                     ID="Pitch transposition" Value="0.999999957079126" DefaultValue="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.999999994950485" StepSize="9.999999974752427e-7"
+                     ID="Pitch transposition" DefaultValue="1.0" Value="0.9999999974752427"/>
           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
                      ID="Pitch async degree" Value="0.0"/>
           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="9.999999974752427e-7"
@@ -35,16 +35,43 @@
         </Parameters>
         <SwitchTargets/>
       </Node>
+      <Node ID="converter" FactoryPath="control.converter" Bypassed="0" Name="converter">
+        <Properties>
+          <Property ID="Mode" Value="Ms2Samples"/>
+        </Properties>
+        <ModulationTargets>
+          <Connection NodeId="faust1" ParameterId="window (samples)"/>
+          <Connection NodeId="faust1" ParameterId="xfade (samples)"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="faust1" FactoryPath="core.faust" Bypassed="0" Name="faust1">
+        <Properties>
+          <Property ID="ClassId" Value="shift"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="-24.0" MaxValue="24.0" StepSize="0.1000000014901161"
+                     ID="shift (semitones)" DefaultValue="0.0" Automated="1"/>
+          <Parameter MinValue="50.0" MaxValue="10000.0" StepSize="1.0" ID="window (samples)"
+                     DefaultValue="1000.0" Automated="1"/>
+          <Parameter MinValue="1.0" MaxValue="10000.0" StepSize="1.0" ID="xfade (samples)"
+                     DefaultValue="10.0" Automated="1"/>
+        </Parameters>
+        <SwitchTargets/>
+      </Node>
     </Nodes>
     <Parameters>
       <Parameter ID="Int" MinValue="4.0" MaxValue="64.0" StepSize="1.0" ExternalModulation="Disabled"
-                 DefaultValue="" Value="4.0">
+                 DefaultValue="" Value="9.0">
         <Connections>
           <Connection NodeId="faust" ParameterId="Interpolation length (samples)"/>
         </Connections>
       </Parameter>
       <Parameter ID="Pos" MinValue="0.0" MaxValue="1.0" StepSize="9.999999974752427e-7"
-                 ExternalModulation="Disabled" DefaultValue="" Value="0.0">
+                 ExternalModulation="Disabled" DefaultValue="" Value="0.3186989991953624">
         <Connections>
           <Connection NodeId="faust" ParameterId="Buffer position"/>
         </Connections>
@@ -62,9 +89,16 @@
         </Connections>
       </Parameter>
       <Parameter ID="g" MinValue="1.0" MaxValue="6400.0" StepSize="0.001000000047497451"
-                 Value="3655.870173597009" DefaultValue="1.0">
+                 Value="563.4120267131365" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="faust" ParameterId="Grain length (ms)"/>
+          <Connection NodeId="converter" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch" MinValue="-24.0" MaxValue="24.0" Value="-5.099999718368057"
+                 DefaultValue="1.0" StepSize="0.1000000014901161">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="shift (semitones)"/>
         </Connections>
       </Parameter>
     </Parameters>
