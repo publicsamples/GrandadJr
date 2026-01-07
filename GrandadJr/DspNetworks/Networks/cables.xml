@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="cables" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="cables" Bypassed="0" Name="cables">
+    <Nodes>
+      <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+        <Nodes>
+          <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282864306">
+            <Properties>
+              <Property ID="Connection" Value="mod1"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+        <Nodes>
+          <Node ID="peak4" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282929586">
+            <Properties>
+              <Property ID="Connection" Value="mod2"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+        <Nodes>
+          <Node ID="peak3" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282864306">
+            <Properties>
+              <Property ID="Connection" Value="mod3"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+        <Nodes>
+          <Node ID="peak2" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282929586">
+            <Properties>
+              <Property ID="Connection" Value="mod4"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>
