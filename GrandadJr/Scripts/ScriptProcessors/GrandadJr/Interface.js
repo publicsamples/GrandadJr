@@ -55,7 +55,7 @@ const var ScriptSliderPack4 = Content.getComponent("ScriptSliderPack4");
 const var Mod1 = Synth.getModulator("Mod1");
 const var Mod2 = Synth.getModulator("Mod2");
 const var Mod3 = Synth.getModulator("Mod3");
-const var Mod4 = Synth.getModulator("Mod4");
+
 
 
 inline function onModMode1Control(component, value)
@@ -92,15 +92,6 @@ inline function onModMode3Control(component, value)
 Content.getComponent("ModMode3").setControlCallback(onModMode3Control);
 
 
-inline function onModMode4Control(component, value)
-{
-	Table4.showControl(value-1);
-	ScriptSliderPack4.showControl(value);
-	
-	Mod4.setAttribute(Mod4.MODE, value); 
-};
-
-Content.getComponent("ModMode4").setControlCallback(onModMode4Control);
 
 
 

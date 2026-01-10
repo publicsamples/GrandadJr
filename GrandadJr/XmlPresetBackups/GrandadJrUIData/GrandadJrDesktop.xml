@@ -263,10 +263,10 @@
                isPluginParameter="1" pluginParameterName="Grain Window" min="50.0"
                max="10000.0" stepSize="0.1000000014901161" visible="0"/>
     <Component type="ScriptComboBox" id="ScriptComboBox14" x="430.0" y="7.0"
-               width="50" height="20" max="5" parentComponent="Granular" textColour="4290499301"
-               itemColour2="4290499301" itemColour="4290499301" bgColour="4290499301"
-               items="off&#10;x2&#10;x4&#10;x8&#10;x16" processorId="Gthng"
-               parameterId="os"/>
+               width="50.0" height="20.0" max="5" parentComponent="Granular"
+               textColour="4290499301" itemColour2="4290499301" itemColour="4290499301"
+               bgColour="4290499301" items="off&#10;x2&#10;x4&#10;x8&#10;x16"
+               processorId="Gthng" parameterId="os"/>
   </Component>
   <Component type="ScriptPanel" id="Space3" x="10.0" y="407.0" width="580.0"
              height="240.0" textColour="4278190097" itemColour2="4278190097"
@@ -442,8 +442,7 @@
                fontName="std" fontSize="14.0"/>
     <Component type="ScriptTable" id="Table1" x="11.0" y="100.0" width="180.0"
                height="60.0" processorId="Mod1" parentComponent="Mod1" customColours="1"
-               itemColour="3538353663" bgColour="4287735995" itemColour2="4292205794"
-               visible="0"/>
+               itemColour="3538353663" bgColour="4287735995" itemColour2="4292205794"/>
     <Component type="ScriptSlider" id="Tempo" x="76.0" y="5.0" width="50.0"
                height="50.0" parentComponent="Mod1" processorId="Mod1" parameterId="Tempo"
                mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
@@ -462,7 +461,7 @@
                bgColour="4293328383" textColour="4278190080" scaleFactor="0.05000000074505806"/>
     <Component type="ScriptSliderPack" id="ScriptSliderPack1" x="11.0" y="100.0"
                width="180.0" height="60.0" parentComponent="Mod1" itemColour="4279314491"
-               bgColour="4293328383" processorId="Mod1" itemColour2="0"/>
+               bgColour="4293328383" processorId="Mod1" itemColour2="0" visible="0"/>
     <Component type="ScriptLabel" id="ScriptLabel19" x="29.0" y="37.0" width="40.0"
                height="10.0" parentComponent="Mod1" editable="0" text="Mode"
                fontName="std" fontSize="14.0" textColour="4287334022" visible="0"/>

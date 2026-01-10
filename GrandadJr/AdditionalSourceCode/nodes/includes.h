@@ -22,6 +22,7 @@
 
 // Include compiled network files ------------------
 
+#include "cables_networkdata.h"
 #include "delStage_networkdata.h"
 #include "FeedJ.h"
 #include "Filter.h"

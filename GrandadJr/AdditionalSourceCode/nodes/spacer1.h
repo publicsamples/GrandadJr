@@ -747,7 +747,7 @@ template <int NV> struct instance: public spacer1_impl::spacer1_t_<NV>
 		; // FeedJ::lp is automated
 		; // FeedJ::pan is automated
 		
-		gain221.setParameterT(0, -23.); // core::gain::Gain
+		gain221.setParameterT(0, -15.); // core::gain::Gain
 		gain221.setParameterT(1, 20.);  // core::gain::Smoothing
 		gain221.setParameterT(2, 0.);   // core::gain::ResetValue
 		

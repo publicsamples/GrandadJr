@@ -375,20 +375,22 @@ template <int NV>
 using step = parameter::chain<step_InputRange, 
                               parameter::plain<spacer2_impl::clone_cable5_t<NV>, 1>>;
 
-DECLARE_PARAMETER_RANGE_STEP(fb_1Range, 
+DECLARE_PARAMETER_RANGE_STEP(HarmSrc_InputRange, 
+                             1., 
+                             17., 
+                             1.);
+DECLARE_PARAMETER_RANGE_STEP(HarmSrc_0Range, 
                              0., 
                              3., 
                              1.);
 
 template <int NV>
-using fb_1 = parameter::from0To1<spacer2_impl::branch1_t<NV>, 
-                                 0, 
-                                 fb_1Range>;
+using HarmSrc_0 = parameter::from0To1<spacer2_impl::branch1_t<NV>, 
+                                      0, 
+                                      HarmSrc_0Range>;
 
 template <int NV>
-using fb = parameter::chain<ranges::Identity, 
-                            parameter::plain<spacer2_impl::clone_cable8_t<NV>, 1>, 
-                            fb_1<NV>>;
+using HarmSrc = parameter::chain<HarmSrc_InputRange, HarmSrc_0<NV>>;
 
 DECLARE_PARAMETER_RANGE_STEP(MixSrc_InputRange, 
                              1., 
@@ -397,7 +399,7 @@ DECLARE_PARAMETER_RANGE_STEP(MixSrc_InputRange,
 template <int NV>
 using MixSrc_0 = parameter::from0To1<spacer2_impl::branch_t<NV>, 
                                      0, 
-                                     fb_1Range>;
+                                     HarmSrc_0Range>;
 
 template <int NV>
 using MixSrc = parameter::chain<MixSrc_InputRange, MixSrc_0<NV>>;
@@ -436,7 +438,7 @@ DECLARE_PARAMETER_RANGE_STEP(CutSrc_InputRange,
 template <int NV>
 using CutSrc_0 = parameter::from0To1<spacer2_impl::branch3_t<NV>, 
                                      0, 
-                                     fb_1Range>;
+                                     HarmSrc_0Range>;
 
 template <int NV>
 using CutSrc = parameter::chain<CutSrc_InputRange, CutSrc_0<NV>>;
@@ -448,7 +450,7 @@ DECLARE_PARAMETER_RANGE_STEP(FilterMode_InputRange,
 template <int NV>
 using FilterMode_0 = parameter::from0To1<spacer2_impl::branch2_t<NV>, 
                                          0, 
-                                         fb_1Range>;
+                                         HarmSrc_0Range>;
 
 template <int NV>
 using FilterMode = parameter::chain<FilterMode_InputRange, FilterMode_0<NV>>;
@@ -463,7 +465,9 @@ using gain = parameter::empty;
 template <int NV>
 using Mix = parameter::plain<spacer2_impl::pma_t<NV>, 
                              2>;
-using HarmSrc = gain;
+template <int NV>
+using fb = parameter::plain<spacer2_impl::clone_cable8_t<NV>, 
+                            1>;
 template <int NV>
 using HarmMod = parameter::plain<spacer2_impl::pma1_t<NV>, 
                                  1>;
@@ -489,7 +493,7 @@ using spacer2_t_plist = parameter::list<Harm<NV>,
                                         max<NV>, 
                                         step<NV>, 
                                         fb<NV>, 
-                                        HarmSrc, 
+                                        HarmSrc<NV>, 
                                         HarmMod<NV>, 
                                         MixMod<NV>, 
                                         MixSrc<NV>, 
@@ -659,9 +663,9 @@ template <int NV> struct instance: public spacer2_impl::spacer2_t_<NV>
 		
 		this->getParameterT(8).connectT(0, clone_cable5); // step -> clone_cable5::Value
 		
-		auto& fb_p = this->getParameterT(9);
-		fb_p.connectT(0, clone_cable8); // fb -> clone_cable8::Value
-		fb_p.connectT(1, branch1);      // fb -> branch1::Index
+		this->getParameterT(9).connectT(0, clone_cable8); // fb -> clone_cable8::Value
+		
+		this->getParameterT(10).connectT(0, branch1); // HarmSrc -> branch1::Index
 		
 		this->getParameterT(11).connectT(0, pma1); // HarmMod -> pma1::Multiply
 		
